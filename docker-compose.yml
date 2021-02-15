@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  mebrak:
+    image: "darakeon/mebrak"
+    container_name: mebrak
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/data/letsencrypt/mebrak:/etc/letsencrypt"
