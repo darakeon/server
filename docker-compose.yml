@@ -13,5 +13,6 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - "/var/data/cert:/var/cert"
       - "/var/data/letsencrypt:/etc/letsencrypt"
       - "/var/data/cert_letsencrypt:/etc/cert/letsencrypt"
