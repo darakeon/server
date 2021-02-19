@@ -3,8 +3,15 @@ services:
   mebrak:
     image: "darakeon/mebrak"
     container_name: mebrak
+  dfm:
+    image: "darakeon/dfm"
+    container_name: dfm
+  nginx:
+    image: "darakeon/server"
+    container_name: server
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - "/var/data/letsencrypt/mebrak:/etc/letsencrypt"
+      - "/var/data/letsencrypt:/etc/letsencrypt"
+      - "/var/data/cert_letsencrypt:/etc/cert/letsencrypt"

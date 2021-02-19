@@ -1,4 +1,4 @@
-FROM darakeon/nginx
+FROM nginx
 MAINTAINER Dara Keon
 RUN apt update
 
@@ -14,4 +14,3 @@ RUN apt install -y dotnet-sdk-5.0
 RUN apt install -y aspnetcore-runtime-5.0
 
 RUN echo 'export PS1="\n\n[\A] \u@\W\$ "' >> ~/.bashrc
-ENV ASPNETCORE_URLS=http://+:2011;https://+:2021

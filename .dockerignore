@@ -1,0 +1,11 @@
+*.gitignore
+
+site/.vs
+site/*/bin
+site/*/obj
+site/packages
+site/*/log
+site/*/*.user
+site/.editorconfig
+
+stories/skeleton.json
