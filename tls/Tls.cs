@@ -40,9 +40,7 @@ namespace TLS
 		{
 			domain = request.Host.Host;
 
-			var relative = Path.Combine("..", "cert", $"{domain}.issued");
-			var info = new FileInfo(relative);
-			issuedPath = info.FullName;
+			issuedPath = $"/etc/letsencrypt/{domain}.issued";
 
 			process = new Process
 			{
