@@ -16,3 +16,10 @@ services:
       - "443:443"
     volumes:
       - "/var/data/letsencrypt:/etc/letsencrypt"
+  mysql:
+    image: "mysql"
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
