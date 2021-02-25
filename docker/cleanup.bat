@@ -1,14 +1,16 @@
+@echo off
+
 echo --------------------------------------------------------------------------------
 echo BEFORE
-df --output=source,size,pcent -h | grep /dev/root
+wmic LogicalDisk Get SystemName,FreeSpace,Size
 echo --------------------------------------------------------------------------------
 
-docker container prune -f > /dev/null
-docker image prune -f -a > /dev/null
-docker network prune -f > /dev/null
-docker system prune -f > /dev/null
+docker container prune -f > NUL
+docker image prune -f -a > NUL
+docker network prune -f > NUL
+docker system prune -f > NUL
 
 echo --------------------------------------------------------------------------------
 echo AFTER
-df --output=source,size,pcent -h | grep /dev/root
+wmic LogicalDisk Get SystemName,FreeSpace,Size
 echo --------------------------------------------------------------------------------
