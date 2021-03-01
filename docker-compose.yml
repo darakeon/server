@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   mysql:
-    image: "mysql"
+    image: "darakeon/mysql"
     container_name: mysql
     ports:
       - "2021:3306"
