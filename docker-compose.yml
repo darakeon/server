@@ -1,14 +1,5 @@
 version: "3.3"
 services:
-  mysql:
-    image: "darakeon/mysql"
-    container_name: mysql
-    ports:
-      - "2021:3306"
-    environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=true
-    volumes:
-      - "/var/data/mysql:/var/lib/mysql"
   mebrak:
     image: "darakeon/mebrak"
     container_name: mebrak
@@ -17,8 +8,6 @@ services:
     container_name: dfm
     volumes:
       - "/var/cfg/dfm:/var/cfg"
-    depends_on:
-      - "mysql"
   nginx:
     image: "darakeon/server"
     container_name: server
