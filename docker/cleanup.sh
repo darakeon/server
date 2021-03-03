@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo --------------------------------------------------------------------------------
 echo BEFORE
 df --output=source,size,pcent -h | grep /dev/root
