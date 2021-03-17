@@ -8,7 +8,8 @@ services:
     container_name: dfm
     volumes:
       - "/var/cfg/dfm:/var/cfg"
-      - "/var/data/dfm:/var/www/data"
+      - "/var/data/dfm/mvc:/var/www/data"
+      - "/var/data/dfm/nh:/var/logs/dfm/nh"
   nginx:
     image: "darakeon/server"
     container_name: server
