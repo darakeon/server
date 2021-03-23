@@ -1,6 +1,6 @@
 FROM darakeon/nginx-netcore
 MAINTAINER Dara Keon
-RUN apt update
+RUN apt upgrade -y && apt update && apt autoremove -y
 
 RUN apt install -y certbot python3-certbot-nginx
 RUN mkdir /var/log/letsencrypt

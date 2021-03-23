@@ -1,6 +1,6 @@
 FROM nginx
 MAINTAINER Dara Keon
-RUN apt update
+RUN apt upgrade -y && apt update && apt autoremove -y
 
 RUN apt install -y curl
 RUN apt install -y ca-certificates
