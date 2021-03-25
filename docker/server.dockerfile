@@ -1,10 +1,13 @@
-FROM darakeon/nginx-netcore
+FROM darakeon/netcore
 MAINTAINER Dara Keon
-RUN apt upgrade -y && apt update && apt autoremove -y
+RUN maintain
+
+RUN apt install -y nginx
 
 RUN apt install -y certbot python3-certbot-nginx
 RUN mkdir /var/log/letsencrypt
 COPY docker/default.conf /etc/nginx/conf.d/
+COPY docker/nginx.conf /etc/nginx/nginx.conf
 
 COPY tls /var/tls
 RUN dotnet publish /var/tls/TLS.csproj -o /var/www
