@@ -8,6 +8,10 @@ RUN echo 'apt autoremove -y' >> /bin/maintain
 RUN echo 'apt clean' >> /bin/maintain
 RUN chmod +x /bin/maintain
 
+RUN echo '#!/bin/bash' > /bin/ci_stop
+RUN echo 'circleci-agent step halt' >> /bin/ci_stop
+RUN chmod +x /bin/ci_stop
+
 RUN maintain
 
 RUN apt install -y curl nano unzip
