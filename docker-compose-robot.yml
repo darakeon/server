@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  dfm:
+    image: "darakeon/dfm-robot"
+    container_name: dfm
+    volumes:
+      - "/var/cfg/dfm:/var/cfg"
+      - "/var/data/dfm/robot:/var/robot/data"
+      - "/var/data/dfm/nh:/var/logs/dfm/nh"

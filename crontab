@@ -22,6 +22,7 @@
 #
 # m h  dom mon dow   command
 
-@reboot cd /home/ubuntu/server && ./run.sh
-00,30 * * * * cd /home/ubuntu/server && git pull && cat crontab | crontab - && ./run.sh
+@reboot cd /home/ubuntu/server && ./run.sh sites
+00,30 * * * * cd /home/ubuntu/server && git pull && cat crontab | crontab - && ./run.sh sites
 15,45 * * * * cd /home/ubuntu/server/docker && ./cleanup.sh
+00,15,30,45 * * * * cd /home/ubuntu/server && ./run.sh robot
