@@ -4,7 +4,7 @@ services:
     image: "darakeon/mebrak"
     container_name: mebrak
   dfm:
-    image: "darakeon/dfm"
+    image: "darakeon/dfm-site"
     container_name: dfm
     volumes:
       - "/var/cfg/dfm:/var/cfg"
