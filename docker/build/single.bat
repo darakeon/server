@@ -5,7 +5,7 @@ set machine=%~1
 set context=%2
 set push=%~3
 
-docker build %context% -f %machine%.dockerfile -t darakeon/%machine% --network=host
+docker build %context% -f ../images/%machine%.dockerfile -t darakeon/%machine% --network=host
 
 if "%push%" == "push" (
 	docker push darakeon/%machine%
