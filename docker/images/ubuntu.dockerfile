@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-MAINTAINER Dara Keon <laboon@darakeon.com>
+LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN echo '#!/bin/bash' > /bin/maintain
 RUN echo 'apt upgrade -y' >> /bin/maintain
