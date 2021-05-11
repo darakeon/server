@@ -122,14 +122,14 @@ namespace TLS
 			var issued = Boolean.Parse(issuedContent);
 
 			var checkDays = issued ? 60 : 5;
-			var validUntil = issuedFile.CreationTime.AddDays(checkDays);
+			var validUntil = issuedFile.LastWriteTime.AddDays(checkDays);
 			var stillValid = validUntil > DateTime.Now;
 
 			Console.WriteLine($"Issued: {issued}");
 			Console.WriteLine($"Validity: {validUntil}");
 			Console.WriteLine($"Valid: {stillValid}");
 
-			return stillValid ? issued : default;
+			return stillValid ? issued : null;
 		}
 
 		private async Task recordIssued(Boolean state)
