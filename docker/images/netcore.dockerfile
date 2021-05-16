@@ -11,3 +11,12 @@ RUN apt update
 RUN apt install -y apt-transport-https
 RUN apt install -y dotnet-sdk-5.0
 RUN apt install -y aspnetcore-runtime-5.0
+
+RUN echo "echo" >> ~/.bashrc
+RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
+RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
+RUN echo "echo ------------------------------------ DOTNET ------------------------------------" >> ~/.bashrc
+RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
+RUN echo "printf '\e[38;5;201m'" >> ~/.bashrc
+RUN echo "dotnet --version" >> ~/.bashrc
+RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
