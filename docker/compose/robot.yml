@@ -7,3 +7,5 @@ services:
       - "/var/cfg/dfm:/var/cfg"
       - "/var/data/dfm/robot:/var/robot/data"
       - "/var/data/dfm/nh:/var/logs/dfm/nh"
+    environment:
+      - TASK=${TASK}
