@@ -22,7 +22,7 @@
 #
 # m h  dom mon dow   command
 
-@reboot              cd /home/ubuntu/server/scripts && ./compose.sh sites
-00,30       *  * * * cd /home/ubuntu/server/scripts && ./upgrade.sh
-00,15,30,45 *  * * * cd /home/ubuntu/server/scripts && ./compose.sh robot schedules
-00          00 * * * cd /home/ubuntu/server/scripts && ./compose.sh robot purge
+@reboot              cd /home/ubuntu/server/scripts && ./compose.sh sites           &>> /var/log/cron.log
+00,30       *  * * * cd /home/ubuntu/server/scripts && ./upgrade.sh                 &>> /var/log/cron.log
+00,15,30,45 *  * * * cd /home/ubuntu/server/scripts && ./compose.sh robot schedules &>> /var/log/cron.log
+00          00 * * * cd /home/ubuntu/server/scripts && ./compose.sh robot purge     &>> /var/log/cron.log
