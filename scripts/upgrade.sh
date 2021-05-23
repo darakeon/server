@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd /home/ubuntu/server
 
 git pull
