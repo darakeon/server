@@ -22,6 +22,8 @@
 #
 # m h  dom mon dow   command
 
+SHELL=/bin/bash
+
 @reboot              cd /home/ubuntu/server/scripts && ./compose.sh sites           &>> /var/log/cron.log
 00,30       *  * * * cd /home/ubuntu/server/scripts && ./upgrade.sh                 &>> /var/log/cron.log
 00,15,30,45 *  * * * cd /home/ubuntu/server/scripts && ./compose.sh robot schedules &>> /var/log/cron.log
