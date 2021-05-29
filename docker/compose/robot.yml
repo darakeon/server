@@ -2,7 +2,7 @@ version: "3.3"
 services:
   robot:
     image: "darakeon/dfm-robot"
-    container_name: robot
+    container_name: robot-${TASK}
     volumes:
       - "/var/cfg/dfm:/var/cfg"
       - "/var/data/dfm/robot:/var/robot/data"
