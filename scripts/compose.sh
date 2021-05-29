@@ -1,6 +1,7 @@
 #!/bin/sh
 
-docker-compose -f ../docker/compose/$1.yml pull --ignore-pull-failures
-
+PROJ=$1
 export TASK=$2
-docker-compose -f ../docker/compose/$1.yml up -d
+
+docker-compose -p $PROJ -f ../docker/compose/$PROJ.yml pull --ignore-pull-failures
+docker-compose -p $PROJ -f ../docker/compose/$PROJ.yml up -d --remove-orphans
