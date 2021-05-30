@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -38,7 +37,7 @@ namespace TLS
 
 		private Tls(HttpRequest request)
 		{
-			domain = request.Host.Host;
+			var domain = request.Host.Host;
 
 			issuedPath = $"/etc/letsencrypt/{domain}.issued";
 
@@ -56,18 +55,11 @@ namespace TLS
 			};
 		}
 
-		private readonly String domain;
 		private readonly String issuedPath;
 		private readonly Process process;
 
 		private async Task<Boolean> genCertAndCheckRedirect()
 		{
-			if (!acceptableDomain())
-			{
-				Console.WriteLine($"Host [{domain}] cannot be validated for certificate");
-				return false;
-			}
-
 			var issued = await testIssued();
 			if (issued.HasValue)
 				return issued.Value;
@@ -101,12 +93,6 @@ namespace TLS
 				await recordIssued(true);
 
 			return isOk;
-		}
-
-		private Boolean acceptableDomain()
-		{
-			return domain != "localhost"
-				&& !Regex.IsMatch(domain, @"\d+\.\d+\.\d+\.\d+");
 		}
 
 		private async Task<Boolean?> testIssued()
