@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo --------------------------------------------------------------------------------
+date
 echo BEFORE
 df --output=source,size,pcent -h | grep /dev/root
 echo --------------------------------------------------------------------------------
@@ -11,6 +12,7 @@ docker network prune -f > /dev/null
 docker system prune -f > /dev/null
 
 echo --------------------------------------------------------------------------------
+date
 echo AFTER
 df --output=source,size,pcent -h | grep /dev/root
 echo --------------------------------------------------------------------------------
