@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  robot-${TASK}:
+  robot:
     image: "darakeon/dfm-robot"
     container_name: robot-${TASK}
     volumes:
