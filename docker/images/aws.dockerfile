@@ -1,5 +1,6 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
+RUN maintain
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip

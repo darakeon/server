@@ -1,5 +1,6 @@
 FROM darakeon/aws
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
+RUN maintain
 
 RUN curl "https://www.terraform.io/downloads.html" | \
 	grep "https://releases.hashicorp.com/terraform/" | \
