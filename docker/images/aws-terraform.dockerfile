@@ -11,6 +11,8 @@ RUN curl "https://www.terraform.io/downloads.html" | \
 RUN unzip terraform.zip -d /usr/bin
 RUN rm terraform.zip
 
+RUN apt install -y git
+
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
 RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
