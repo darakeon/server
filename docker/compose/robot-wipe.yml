@@ -1,11 +1,11 @@
 version: "3.3"
 services:
-  robot:
+  robot_wipe:
     image: "darakeon/dfm-robot"
-    container_name: robot-${TASK}
+    container_name: robot_wipe
     volumes:
       - "/var/cfg/dfm:/var/cfg"
-      - "/var/data/dfm/robot:/var/robot/data"
+      - "/var/data/dfm/robot-wipe:/var/robot/data"
       - "/var/data/dfm/nh:/var/logs/dfm/nh"
     environment:
-      - TASK=${TASK}
+      - TASK=2
