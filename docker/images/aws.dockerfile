@@ -15,4 +15,4 @@ RUN echo "echo -----------------------------------------------------------------
 RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
 RUN echo "aws --version" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
-RUN echo "IP=$(curl -s http://checkip.amazonaws.com/)" >> ~/.bashrc
+RUN echo "IP=\$(curl -s http://checkip.amazonaws.com/)" >> ~/.bashrc
