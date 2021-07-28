@@ -18,5 +18,5 @@ RUN echo "echo -----------------------------------------------------------------
 RUN echo "echo ------------------------------------ DOTNET ------------------------------------" >> ~/.bashrc
 RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
 RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
-RUN echo "dotnet --version" >> ~/.bashrc
+RUN echo "dotnet --info" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
