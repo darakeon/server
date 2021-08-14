@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN echo '#!/bin/bash' > /bin/maintain
