@@ -1,7 +1,8 @@
-FROM ubuntu:latest
+FROM ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN echo '#!/bin/bash' > /bin/maintain
+RUN date >> /bin/maintain
 RUN echo 'apt upgrade -y' >> /bin/maintain
 RUN echo 'apt update' >> /bin/maintain
 RUN echo 'apt autoremove -y' >> /bin/maintain

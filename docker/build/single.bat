@@ -9,7 +9,7 @@ if "%context%" == "" (
 	set context=.
 )
 
-docker build %context% -f %dir%../images/%machine%.dockerfile -t darakeon/%machine% --network=host
+docker build %context% --pull -f %dir%../images/%machine%.dockerfile -t darakeon/%machine% --network=host
 
 if "%push%" == "push" (
 	docker push darakeon/%machine%
