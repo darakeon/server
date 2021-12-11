@@ -18,7 +18,7 @@ RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
 RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
 RUN echo "echo ------------------------------- TALISMAN CHECKER -------------------------------" >> ~/.bashrc
-RUN echo "echo ------   --------------------------------------------------------------------------" >> ~/.bashrc
+RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
 RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
 RUN echo "talisman --version" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
