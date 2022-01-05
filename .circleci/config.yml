@@ -15,7 +15,7 @@ jobs:
 
   docker:
     docker:
-      - image: darakeon/ubuntu
+      - image: docker
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASSWORD
