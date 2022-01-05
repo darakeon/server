@@ -16,17 +16,14 @@ jobs:
   docker:
     docker:
       - image: docker
-        auth:
-          username: $DOCKER_USER
-          password: $DOCKER_PASSWORD
     steps:
       - checkout
       - setup_remote_docker:
           version: 20.10.11
           docker_layer_caching: true
-#      - run:
-#          name: Login
-#          command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - run:
+          name: Login
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run:
           name: Build and Push
           path: docker/build
