@@ -14,7 +14,7 @@
 	},
 	"homepage": "https://github.com/darakeon/dfm#readme",
 	"dependencies": {
-		"aws-sdk": "^2.809.0",
-		"public-ip": "^4.0.3"
+		"aws-sdk": "^2.1109.0",
+		"public-ip": "^5.0.0"
 	}
 }
