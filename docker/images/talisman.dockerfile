@@ -2,9 +2,9 @@ FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 RUN maintain
 
-RUN apt install -y libdigest-sha-perl
+RUN apt-get install -y libdigest-sha-perl
 
-RUN apt install -y git
+RUN apt-get install -y git
 RUN git config --global init.templatedir /home/.git-template
 
 RUN curl --silent https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash > /tmp/install_talisman.bash
