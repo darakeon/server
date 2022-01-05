@@ -3,7 +3,9 @@ LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 RUN maintain
 
 RUN apt-get install -y ca-certificates
-RUN curl https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb > packages-microsoft-prod.deb \
+RUN V=$(cat /etc/issue | sed s/[^0-9\.]//g) \
+	&& URL=https://packages.microsoft.com/config/ubuntu/${V}/packages-microsoft-prod.deb \
+	&& curl ${URL} > packages-microsoft-prod.deb \
 	&& dpkg -i packages-microsoft-prod.deb \
 	&& rm packages-microsoft-prod.deb
 
