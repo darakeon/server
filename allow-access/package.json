@@ -16,5 +16,6 @@
 	"dependencies": {
 		"aws-sdk": "^2.1109.0",
 		"public-ip": "^5.0.0"
-	}
+	},
+	"type": "module"
 }

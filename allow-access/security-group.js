@@ -1,5 +1,6 @@
-const publicIp = require('public-ip')
-const AWS = require('aws-sdk')
+import publicIp from 'public-ip'
+import AWS from 'aws-sdk'
+import fs from 'fs'
 
 // config file is ignored by git
 // region: AWS region
@@ -7,7 +8,9 @@ const AWS = require('aws-sdk')
 // apiVersion: AWS api version
 // ports: list of ports which you want point to your IP
 // profile: profile to be used from ~/.aws/credentials
-const {region, securityGroup, apiVersion, ports, profile} = require('./config.json')
+const { region, securityGroup, apiVersion, ports, profile } = JSON.parse(
+	fs.readFileSync('./config.json')
+)
 
 // ~/.aws/credentials:
 // [default]
