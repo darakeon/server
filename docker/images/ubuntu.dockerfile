@@ -26,4 +26,13 @@ RUN echo "echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ by Dara Keon ~~~~~~~~~~~~~~~~~
 RUN echo "echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
 
+RUN echo "echo" >> ~/.bashrc
+RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
+RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
+RUN echo "echo ------------------------------------ UBUNTU ------------------------------------" >> ~/.bashrc
+RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
+RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
+RUN echo "cat /etc/issue" >> ~/.bashrc
+RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
+
 CMD bash
