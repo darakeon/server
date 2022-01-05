@@ -22,7 +22,8 @@ jobs:
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run:
           name: Build and Push
-          command: ./docker/build/all.sh push
+          path: docker/build
+          command: ./all.sh push
 
 workflows:
   deploy:
