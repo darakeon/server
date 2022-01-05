@@ -15,7 +15,7 @@ jobs:
 
   docker:
     docker:
-      - image: cimg/go
+      - image: darakeon/ubuntu
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASSWORD
