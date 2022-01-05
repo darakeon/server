@@ -10,7 +10,7 @@ CONTEXT=$2
 PUSH=$3
 
 if [ "$CONTEXT" == "" ]; then
-	CONTEXT=$DIR
+	CONTEXT=.
 fi
 
 docker build $CONTEXT --pull -f $DIR/../images/$MACHINE.dockerfile -t darakeon/$MACHINE --network=host
