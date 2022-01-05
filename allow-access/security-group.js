@@ -1,4 +1,4 @@
-const publicIp = require('public-ip');
+const publicIp = require('public-ip')
 const AWS = require('aws-sdk')
 
 // config file is ignored by git
@@ -15,7 +15,7 @@ const {region, securityGroup, apiVersion, ports, profile} = require('./config.js
 // aws_secret_access_key = {}
 
 async function updateSecurityGroup() {
-	const credentials = new AWS.SharedIniFileCredentials({profile});
+	const credentials = new AWS.SharedIniFileCredentials({profile})
 
 	AWS.config.update({region, credentials})
 
