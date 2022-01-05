@@ -11,7 +11,7 @@ COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY tls /var/tls
 RUN dotnet publish /var/tls/TLS.csproj -o /var/www
-RUN apt remove -y dotnet-sdk-5.0
+RUN apt remove -y dotnet-sdk-6.0
 RUN rm -r /var/tls
 
 ENV ASPNETCORE_URLS=http://+:1986

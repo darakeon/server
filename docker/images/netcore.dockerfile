@@ -9,8 +9,8 @@ RUN curl https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
 
 RUN apt update
 RUN apt install -y apt-transport-https
-RUN apt install -y dotnet-sdk-5.0
-RUN apt install -y aspnetcore-runtime-5.0
+RUN apt install -y dotnet-sdk-6.0
+RUN apt install -y aspnetcore-runtime-6.0
 
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
