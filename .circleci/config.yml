@@ -25,9 +25,21 @@ jobs:
           name: Login
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run:
-          name: Build and Push
+          name: Build and Push Alpine
           path: docker/build
-          command: ./all.sh push
+          command: ./single.sh alpine . push
+      - run:
+          name: Build and Push Ubuntu
+          path: docker/build
+          command: ./single.sh ubuntu . push
+      - run:
+          name: Build and Push Netcore
+          path: docker/build
+          command: ./single.sh netcore . push
+      - run:
+          name: Build and Push Server
+          path: docker/build
+          command: ./single.sh server ../.. push
 
 workflows:
   deploy:
