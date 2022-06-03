@@ -4,6 +4,9 @@ RUN maintain
 
 RUN apt-get install -y nginx
 
+ENV TZ=America/Sao_Paulo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get install -y certbot python3-certbot-nginx
 RUN mkdir /var/log/letsencrypt
 COPY docker/nginx/default.conf /etc/nginx/conf.d/
