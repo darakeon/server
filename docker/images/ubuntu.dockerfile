@@ -21,7 +21,7 @@ RUN echo 'export PS1="\n\n[\[\033[01;30m\]\A\[\033[00m\]] \[\033[01;31m\]\u\[\03
 
 RUN echo "printf '\e[38;5;217m'" >> ~/.bashrc
 RUN echo "echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'" >> ~/.bashrc
-RUN echo "echo '~~~~~~ Welcome! This Ubuntu has curl, nano, git, zip and unzip installed. ~~~~~~'" >> ~/.bashrc
+RUN echo "echo '~~~~~~ Welcome! This Ubuntu has curl, nano, zip, unzip and git installed. ~~~~~~'" >> ~/.bashrc
 RUN echo "echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ by Dara Keon ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'" >> ~/.bashrc
 RUN echo "echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
