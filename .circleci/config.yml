@@ -40,6 +40,10 @@ jobs:
           name: Build and Push Server
           path: docker/build
           command: ./single.sh server ../.. push
+      - run:
+          name: Build and Push Node
+          path: docker/build
+          command: ./single.sh node ../.. push
 
 workflows:
   deploy:
