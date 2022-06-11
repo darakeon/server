@@ -13,6 +13,18 @@ jobs:
           name: run trufflehog
           command: trufflehog --exclude_paths trufflehog/exclude-patterns.txt --allow trufflehog/allow.json .
 
+  check-npm:
+    docker:
+      - image: darakeon/node
+    steps:
+      - checkout
+      - run:
+          name: install git
+          command: apk add git
+      - run:
+          name: npm audit
+          command: npm audit
+
   docker:
     docker:
       - image: docker
@@ -49,6 +61,7 @@ workflows:
   deploy:
     jobs:
       - trufflehog
+      - check-npm
       - docker:
           filters:
             branches:
