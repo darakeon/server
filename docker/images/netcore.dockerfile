@@ -3,7 +3,7 @@ LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 RUN maintain
 
 RUN apt-get install -y ca-certificates
-RUN V=$(cat /etc/issue | sed s/[^0-9\.]//g) \
+RUN V=$(cat /etc/issue | sed s/[^0-9\.]//g | cut -c1-5) \
 	&& echo ${V} \
 	&& URL=https://packages.microsoft.com/config/ubuntu/${V}/packages-microsoft-prod.deb \
 	&& curl ${URL} > packages-microsoft-prod.deb \
