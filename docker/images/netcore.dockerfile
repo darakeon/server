@@ -2,14 +2,6 @@ FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 RUN maintain
 
-RUN apt-get install -y ca-certificates
-RUN V=$(cat /etc/issue | sed s/[^0-9\.]//g | cut -c1-5) \
-	&& echo ${V} \
-	&& URL=https://packages.microsoft.com/config/ubuntu/${V}/packages-microsoft-prod.deb \
-	&& curl ${URL} > packages-microsoft-prod.deb \
-	&& dpkg -i packages-microsoft-prod.deb \
-	&& rm packages-microsoft-prod.deb
-
 RUN apt-get update
 RUN apt-get install -y apt-transport-https
 RUN apt-get install -y dotnet-sdk-6.0
