@@ -32,6 +32,10 @@ jobs:
           path: docker/build
           command: make ubuntu_push
       - run:
+          name: Build and Push Dockery
+          path: docker/build
+          command: make dockery_push
+      - run:
           name: Build and Push Netcore
           path: docker/build
           command: make netcore_push
