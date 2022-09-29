@@ -15,7 +15,7 @@ jobs:
 
   docker:
     docker:
-      - image: docker
+      - image: darakeon/ubuntu
     steps:
       - checkout
       - setup_remote_docker:
