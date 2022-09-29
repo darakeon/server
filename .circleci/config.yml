@@ -27,19 +27,19 @@ jobs:
       - run:
           name: Build and Push Alpine
           path: docker/build
-          command: ./single.sh alpine . push
+          command: make alpine_push
       - run:
           name: Build and Push Ubuntu
           path: docker/build
-          command: ./single.sh ubuntu . push
+          command: make ubuntu_push
       - run:
           name: Build and Push Netcore
           path: docker/build
-          command: ./single.sh netcore . push
+          command: make netcore_push
       - run:
           name: Build and Push Server
           path: docker/build
-          command: ./single.sh server ../.. push
+          command: make server_push
 
 workflows:
   deploy:
