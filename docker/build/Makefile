@@ -12,6 +12,12 @@ ubuntu:
 ubuntu_push: ubuntu
 	@make push MACHINE=ubuntu
 
+dockery:
+	@make single MACHINE=dockery CONTEXT=.
+
+dockery_push: dockery
+	@make push MACHINE=dockery
+
 netcore:
 	@make single MACHINE=netcore CONTEXT=.
 
