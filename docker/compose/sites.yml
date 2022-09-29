@@ -21,6 +21,7 @@ services:
       - "443:443"
     volumes:
       - "/var/data/letsencrypt:/etc/letsencrypt"
+      - "/var/data/log_nginx:/var/log/nginx/"
     depends_on:
       - "dfm"
       - "mebrak"
