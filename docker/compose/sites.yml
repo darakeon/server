@@ -10,6 +10,9 @@ services:
       - "/var/cfg/dfm:/var/cfg"
       - "/var/data/dfm/mvc:/var/www/data"
       - "/var/data/dfm/nh:/var/logs/dfm/nh"
+  curriculum:
+    image: "darakeon/curriculum"
+    container_name: curriculum
   nginx:
     image: "darakeon/server"
     container_name: server
@@ -21,3 +24,4 @@ services:
     depends_on:
       - "dfm"
       - "mebrak"
+      - "curriculum"
