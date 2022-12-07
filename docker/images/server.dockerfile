@@ -23,4 +23,4 @@ EXPOSE 443
 
 WORKDIR /var/www
 
-CMD service nginx start && ./TLS
+CMD service nginx start && ./TLS || echo 'TLS DID NOT RUN'
