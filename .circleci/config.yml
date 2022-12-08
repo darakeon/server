@@ -25,23 +25,23 @@ jobs:
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run:
           name: Build and Push Alpine
-          path: docker/build
+          path: docker
           command: make alpine_push
       - run:
           name: Build and Push Ubuntu
-          path: docker/build
+          path: docker
           command: make ubuntu_push
       - run:
           name: Build and Push Dockery
-          path: docker/build
+          path: docker
           command: make dockery_push
       - run:
           name: Build and Push Netcore
-          path: docker/build
+          path: docker
           command: make netcore_push
       - run:
           name: Build and Push Server
-          path: docker/build
+          path: docker
           command: make server_push
 
 workflows:
