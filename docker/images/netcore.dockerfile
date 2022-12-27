@@ -8,6 +8,7 @@ RUN apt-get install -y dotnet-sdk-6.0
 RUN apt-get install -y aspnetcore-runtime-6.0
 
 ENV DOTNET_ROOT=/usr/lib/dotnet
+ENV DOTNET_NOLOGO=1
 
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
