@@ -48,7 +48,7 @@ services:
     container_name: grafana
     volumes:
       - ../configs/grafana/custom.ini:/usr/share/grafana/conf/custom.ini
-      - ../configs/grafana/provisioning/prometheus.yml:/etc/grafana/provisioning/datasources/prometheus.yml
+      - ../configs/grafana/provisioning/:/etc/grafana/provisioning/
       - /var/data/grafana/log:/var/log/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=$GF_SECURITY_ADMIN_USER
