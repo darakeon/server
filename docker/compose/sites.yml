@@ -36,9 +36,24 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ../configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
     depends_on:
       - "dfm"
       - "mebrak"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ../configs/grafana/custom.ini:/usr/share/grafana/conf/custom.ini
+      - ../configs/grafana/provisioning/prometheus.yml:/etc/grafana/provisioning/datasources/prometheus.yml
+      - /var/data/grafana/log:/var/log/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=$GF_SECURITY_ADMIN_USER
+      - GF_SECURITY_ADMIN_PASSWORD=$GF_SECURITY_ADMIN_PASSWORD
+    ports:
+      - 3030:3000
+    depends_on:
+      - prometheus
