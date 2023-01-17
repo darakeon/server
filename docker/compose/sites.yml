@@ -36,7 +36,7 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes:
-      - ../configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
     depends_on:
@@ -47,8 +47,8 @@ services:
     image: grafana/grafana
     container_name: grafana
     volumes:
-      - ../configs/grafana/custom.ini:/usr/share/grafana/conf/custom.ini
-      - ../configs/grafana/provisioning/:/etc/grafana/provisioning/
+      - ../grafana/custom.ini:/usr/share/grafana/conf/custom.ini
+      - ../grafana/provisioning/:/etc/grafana/provisioning/
       - /var/data/grafana/log:/var/log/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=$GF_SECURITY_ADMIN_USER
