@@ -14,6 +14,17 @@ services:
       - "/var/data/dfm/mvc:/var/www/data"
       - "/var/data/dfm/nh:/var/logs/dfm/nh"
 
+  midna:
+    image: "darakeon/dfm-midna"
+    container_name: midna
+    volumes:
+      - "/var/cfg/midna:/var/midna/config"
+      - "/var/data/midna/log:/var/log/gunicorn" # access.log + error.log
+      - "/var/data/midna/run:/var/run/gunicorn" # prod.pid
+      - "/var/data/midna/static:/var/midna/static/outside"
+    env_file:
+      - "/var/cfg/midna/prod.env"
+
   curriculum:
     image: "darakeon/curriculum"
     container_name: curriculum
@@ -27,10 +38,12 @@ services:
     volumes:
       - "/var/data/letsencrypt:/etc/letsencrypt"
       - "/var/data/log_nginx:/var/log/nginx/"
+      - "/var/data/midna/static:/var/midna/static/outside"
     depends_on:
       - "dfm"
       - "mebrak"
       - "curriculum"
+      - "midna"
 
   prometheus:
     image: prom/prometheus
