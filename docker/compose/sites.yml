@@ -37,7 +37,7 @@ services:
       - "443:443"
     volumes:
       - "/var/data/letsencrypt:/etc/letsencrypt"
-      - "/var/data/log_nginx:/var/log/nginx/"
+      - "/var/data/nginx/log:/var/log/nginx/"
       - "/var/data/midna/static:/var/midna/static/outside"
     depends_on:
       - "dfm"
