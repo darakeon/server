@@ -27,7 +27,7 @@ netcore_push: netcore
 netcore_libman:
 	@make single MACHINE=netcore-libman CONTEXT=.
 
-netcore_libman_push: netcore
+netcore_libman_push: netcore_libman
 	@make push MACHINE=netcore-libman
 
 server:
