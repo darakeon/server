@@ -24,6 +24,12 @@ netcore:
 netcore_push: netcore
 	@make push MACHINE=netcore
 
+netcore_libman:
+	@make single MACHINE=netcore-libman CONTEXT=.
+
+netcore_libman_push: netcore
+	@make push MACHINE=netcore-libman
+
 server:
 	@make single MACHINE=server CONTEXT=..
 
