@@ -4,8 +4,8 @@ RUN maintain
 
 RUN apt-get update
 RUN apt-get install -y apt-transport-https
-RUN apt-get install -y dotnet-sdk-7.0
-RUN apt-get install -y aspnetcore-runtime-7.0
+RUN apt-get install -y dotnet-sdk-8.0
+RUN apt-get install -y aspnetcore-runtime-8.0
 
 ENV DOTNET_ROOT=/usr/lib/dotnet
 ENV DOTNET_NOLOGO=1
