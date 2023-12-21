@@ -1,49 +1,49 @@
-version: "3.9"
+version: 3.9
 
 services:
 
   mebrak:
-    image: "darakeon/mebrak"
+    image: darakeon/mebrak
     container_name: mebrak
 
   dfm:
-    image: "darakeon/dfm-site"
+    image: darakeon/dfm-site
     container_name: dfm
     volumes:
-      - "/var/cfg/dfm:/var/cfg"
-      - "/var/data/dfm/mvc:/var/www/data"
-      - "/var/data/dfm/nh:/var/logs/dfm/nh"
+      - /var/cfg/dfm:/var/cfg
+      - /var/data/dfm/mvc:/var/www/data
+      - /var/data/dfm/nh:/var/logs/dfm/nh
 
   midna:
-    image: "darakeon/dfm-midna"
+    image: darakeon/dfm-midna
     container_name: midna
     volumes:
-      - "/var/cfg/midna:/var/midna/config"
-      - "/var/data/midna/log:/var/log/gunicorn" # access.log + error.log
-      - "/var/data/midna/run:/var/run/gunicorn" # prod.pid
-      - "/var/data/midna/static:/var/midna/static/outside"
+      - /var/cfg/midna:/var/midna/config
+      - /var/data/midna/log:/var/log/gunicorn # access.log + error.log
+      - /var/data/midna/run:/var/run/gunicorn # prod.pid
+      - /var/data/midna/static:/var/midna/static/outside
     env_file:
-      - "/var/cfg/midna/prod.env"
+      - /var/cfg/midna/prod.env
 
   curriculum:
-    image: "darakeon/curriculum"
+    image: darakeon/curriculum
     container_name: curriculum
 
   nginx:
-    image: "darakeon/server"
+    image: darakeon/server
     container_name: server
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
-      - "/var/data/letsencrypt:/etc/letsencrypt"
-      - "/var/data/nginx/log:/var/log/nginx/"
-      - "/var/data/midna/static:/var/midna/static/outside"
+      - /var/data/letsencrypt:/etc/letsencrypt
+      - /var/data/nginx/log:/var/log/nginx/
+      - /var/data/midna/static:/var/midna/static/outside
     depends_on:
-      - "dfm"
-      - "mebrak"
-      - "curriculum"
-      - "midna"
+      - dfm
+      - mebrak
+      - curriculum
+      - midna
 
   prometheus:
     image: prom/prometheus
@@ -52,8 +52,8 @@ services:
       - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - /var/data/prometheus:/prometheus
     depends_on:
-      - "dfm"
-      - "mebrak"
+      - dfm
+      - mebrak
 
   grafana:
     image: grafana/grafana
