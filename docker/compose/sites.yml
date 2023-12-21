@@ -14,6 +14,22 @@ services:
       - /var/data/dfm/mvc:/var/www/data
       - /var/data/dfm/nh:/var/logs/dfm/nh
 
+  dfm-api:
+    image: nginx:alpine
+    container_name: dfm-api
+    volumes:
+      - /var/data/dfm/html:/usr/share/nginx/html
+    ports:
+      - 2023:80
+
+  #dfm-api:
+  #  image: darakeon/dfm-api
+  #  container_name: dfm-api
+  #  volumes:
+  #    - /var/cfg/dfm:/var/cfg
+  #    - /var/data/dfm/api:/var/www/data
+  #    - /var/data/dfm/nh-api:/var/logs/dfm/nh
+
   midna:
     image: darakeon/dfm-midna
     container_name: midna
