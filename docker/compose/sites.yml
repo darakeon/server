@@ -20,7 +20,9 @@ services:
     volumes:
       - /var/data/dfm/html:/usr/share/nginx/html
     ports:
-      - 2023:80
+      - 2023:2023
+    environment:
+      - NGINX_PORT=2023
 
   #dfm-api:
   #  image: darakeon/dfm-api
