@@ -19,12 +19,8 @@ services:
     container_name: dfm-api
     volumes:
       - /var/data/dfm/html:/usr/share/nginx/html
-    ports:
-      - 2023:2023
-    environment:
-      - NGINX_PORT=2023
 
-  #dfm-api:
+  #dfm-api: // change port at NGINX default.conf
   #  image: darakeon/dfm-api
   #  container_name: dfm-api
   #  volumes:
