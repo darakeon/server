@@ -60,6 +60,7 @@ services:
       - mebrak
       - curriculum
       - midna
+      - dfm-api
 
   prometheus:
     image: prom/prometheus
