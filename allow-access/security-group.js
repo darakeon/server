@@ -1,4 +1,4 @@
-import publicIp from 'public-ip'
+import { publicIpv4 } from 'public-ip'
 import AWS from 'aws-sdk'
 import fs from 'fs'
 
@@ -25,7 +25,7 @@ async function updateSecurityGroup() {
 	const ec2 = new AWS.EC2({apiVersion})
 	const params = { GroupNames: [securityGroup] }
 
-	const ip = await publicIp.v4() + '/32'
+	const ip = await publicIpv4() + '/32'
 
 	ec2.describeSecurityGroups(params, async function(err, data) {
 		if (err) {
