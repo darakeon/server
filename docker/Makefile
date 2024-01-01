@@ -1,6 +1,6 @@
-main: ubuntu netcore server netcore_libman
+main: ubuntu netcore netcore_server server netcore_libman
 
-main_push: ubuntu_push netcore_push server_push netcore_libman_push
+main_push: ubuntu_push netcore_push netcore_server_push server_push netcore_libman_push
 
 
 alpine:
