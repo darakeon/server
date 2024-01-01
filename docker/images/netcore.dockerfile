@@ -1,14 +1,14 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
-RUN maintain
 
-RUN apt-get update
-RUN apt-get install -y libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu70 liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g
-RUN curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
-RUN chmod +x ./dotnet-install.sh
-RUN ./dotnet-install.sh --channel 8.0 --install-dir /usr/lib/dotnet
-#RUN apt-get install -y dotnet-sdk-7.0
-#RUN apt-get install -y aspnetcore-runtime-7.0
+RUN apt-get install -y \
+        libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu70 \
+        liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g \
+    && curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh \
+    && chmod +x ./dotnet-install.sh \
+    && ./dotnet-install.sh --channel 8.0 --install-dir /usr/lib/dotnet \
+    && rm ./dotnet-install.sh \
+    && clean_os
 
 ENV DOTNET_ROOT=/usr/lib/dotnet
 ENV DOTNET_NOLOGO=1
