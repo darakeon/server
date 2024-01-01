@@ -1,0 +1,3 @@
+#!/bin/sh
+
+circleci-agent step halt

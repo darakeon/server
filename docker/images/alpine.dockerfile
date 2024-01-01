@@ -1,14 +1,10 @@
 FROM alpine
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-RUN echo '#!/bin/sh' > /bin/maintain
-RUN echo 'date' >> /bin/maintain
-RUN echo 'apk upgrade' >> /bin/maintain
-RUN echo 'apk update' >> /bin/maintain
+COPY images/scripts/alpine_maintain /bin/maintain
 RUN chmod +x /bin/maintain
 
-RUN echo '#!/bin/sh' > /bin/ci_stop
-RUN echo 'circleci-agent step halt' >> /bin/ci_stop
+COPY images/scripts/alpine_ci_stop /bin/ci_stop
 RUN chmod +x /bin/ci_stop
 
 RUN maintain
