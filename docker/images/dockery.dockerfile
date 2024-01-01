@@ -1,10 +1,10 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
-RUN maintain
 
-RUN curl -fsSL https://get.docker.com -o get-docker.sh
-RUN chmod +x get-docker.sh
-RUN ./get-docker.sh
+RUN curl -fsSL https://get.docker.com -o get-docker.sh \
+    && chmod +x get-docker.sh \
+    && ./get-docker.sh \
+    && clean_os
 
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
