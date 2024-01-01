@@ -1,0 +1,7 @@
+#!/bin/sh
+
+nginx -g "daemon off;" &
+
+./TLS || echo 'TLS DID NOT RUN'
+
+tail -f /dev/null

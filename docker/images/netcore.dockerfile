@@ -1,14 +1,11 @@
-FROM darakeon/ubuntu
+FROM darakeon/alpine
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-RUN apt-get install -y \
-        libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu70 \
-        liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g \
+RUN apk add bash icu-libs krb5-libs libgcc libintl libstdc++ zlib \
     && curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh \
     && chmod +x ./dotnet-install.sh \
     && ./dotnet-install.sh --channel 8.0 --install-dir /usr/lib/dotnet \
-    && rm ./dotnet-install.sh \
-    && clean_os
+    && rm ./dotnet-install.sh
 
 ENV DOTNET_ROOT=/usr/lib/dotnet
 ENV DOTNET_NOLOGO=1
