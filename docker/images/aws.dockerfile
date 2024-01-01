@@ -1,11 +1,11 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
-RUN maintain
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN ./aws/install
-RUN rm awscliv2.zip
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install \
+    && rm awscliv2.zip \
+    && clean_os
 
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc

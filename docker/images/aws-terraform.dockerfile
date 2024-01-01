@@ -1,17 +1,13 @@
 FROM darakeon/aws
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
-RUN maintain
 
-RUN curl "https://www.terraform.io/downloads.html" | \
-	grep "https://releases.hashicorp.com/terraform/" | \
-	grep "_linux_amd64.zip" | \
-	cut -d'"' -f 2 | \
-	xargs curl -o terraform.zip
-
-RUN unzip terraform.zip -d /usr/bin
-RUN rm terraform.zip
-
-RUN apt-get install -y git
+RUN apt-get install -y gpg \
+	&& curl -sL https://apt.releases.hashicorp.com/gpg | \
+		gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg\
+	&& . /etc/os-release \
+	&& echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $VERSION_CODENAME main" > /etc/apt/sources.list.d/hashicorp.list\
+	&& apt-get update -y && apt-get install -y terraform \
+	&& clean_os
 
 RUN echo "echo" >> ~/.bashrc
 RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
