@@ -1,21 +1,20 @@
 FROM ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-RUN echo '#!/bin/bash' > /bin/maintain
-RUN echo 'date' >> /bin/maintain
-RUN echo 'apt-get upgrade -y' >> /bin/maintain
-RUN echo 'apt-get update' >> /bin/maintain
-RUN echo 'apt-get autoremove -y' >> /bin/maintain
-RUN echo 'apt-get clean' >> /bin/maintain
+COPY images/scripts/ubuntu_maintain /bin/maintain
 RUN chmod +x /bin/maintain
 
-RUN echo '#!/bin/bash' > /bin/ci_stop
-RUN echo 'circleci-agent step halt' >> /bin/ci_stop
+COPY images/scripts/ubuntu_clean_os /bin/clean_os
+RUN chmod +x /bin/clean_os
+
+COPY images/scripts/ubuntu_ci_stop /bin/ci_stop
 RUN chmod +x /bin/ci_stop
 
 RUN maintain
 
-RUN apt-get install -y curl nano zip unzip git build-essential
+RUN apt-get install -y \
+        curl nano zip unzip git build-essential \
+    && clean_os
 
 RUN echo 'export PS1="\n\n[\[\033[01;30m\]\A\[\033[00m\]] \[\033[01;31m\]\u\[\033[00m\]@\[\033[01;35m\]\W\[\033[00m\]$ "' >> ~/.bashrc
 
