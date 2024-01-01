@@ -44,6 +44,10 @@ jobs:
           path: docker
           command: make netcore_libman_push
       - run:
+          name: Build and Push Netcore Server
+          path: docker
+          command: make netcore_server_push
+      - run:
           name: Build and Push Server
           path: docker
           command: make server_push
