@@ -1,8 +1,7 @@
 FROM darakeon/netcore
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-RUN dotnet tool install -g Microsoft.Web.LibraryManager.Cli \
-    && clean_os
+RUN dotnet tool install -g Microsoft.Web.LibraryManager.Cli
 
 ENV PATH="/root/.dotnet/tools:${PATH}"
 
