@@ -1,4 +1,4 @@
-FROM darakeon/netcore:alpine as builder
+FROM darakeon/netcore as builder
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 RUN maintain
 
@@ -6,7 +6,7 @@ COPY tls /var/tls
 RUN dotnet publish /var/tls/TLS.csproj -o /var/www
 
 
-FROM darakeon/netcore-server:alpine
+FROM darakeon/netcore-server
 
 COPY --from=builder /var/www /var/www
 

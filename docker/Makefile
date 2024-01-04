@@ -75,11 +75,11 @@ talisman_push: talisman
 
 single:
 	@echo "Building ${MACHINE}..."
-	@docker build ${CONTEXT} --pull --progress plain -f images/${MACHINE}.dockerfile -t darakeon/${MACHINE}:alpine --network=host
+	@docker build ${CONTEXT} --pull --progress plain -f images/${MACHINE}.dockerfile -t darakeon/${MACHINE} --network=host
 	@echo "${MACHINE} built!"
 
 
 push:
 	@echo "Pushing ${MACHINE}..."
-	@docker push darakeon/${MACHINE}:alpine
+	@docker push darakeon/${MACHINE}
 	@echo "${MACHINE} pushed!"
