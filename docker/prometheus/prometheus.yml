@@ -30,7 +30,7 @@ scrape_configs:
     tls_config:
       insecure_skip_verify: true
     static_configs:
-      - targets: ['mebrak:2709']
+      - targets: ['mebrak:2703']
 
   - job_name: prometheus
     static_configs:
