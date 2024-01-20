@@ -76,6 +76,7 @@ talisman_push: talisman
 single:
 	@echo "Building ${MACHINE}..."
 	@docker build ${CONTEXT} --pull --progress plain -f images/${MACHINE}.dockerfile -t darakeon/${MACHINE} --network=host
+	@docker tag darakeon/${MACHINE} darakeon-${MACHINE}
 	@echo "${MACHINE} built!"
 
 
