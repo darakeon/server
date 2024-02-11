@@ -36,13 +36,21 @@ jobs:
           path: docker
           command: make dockery_push
       - run:
-          name: Build and Push Netcore
+          name: Build and Push Netcore Alpine
           path: docker
-          command: make netcore_push
+          command: make netcore_alpine_push
       - run:
-          name: Build and Push Netcore Libman
+          name: Build and Push Netcore Ubuntu
           path: docker
-          command: make netcore_libman_push
+          command: make netcore_ubuntu_push
+      - run:
+          name: Build and Push Netcore Libman Alpine
+          path: docker
+          command: make netcore_alpine_libman_push
+      - run:
+          name: Build and Push Netcore Libman Ubuntu
+          path: docker
+          command: make netcore_libman_ubuntu_push
       - run:
           name: Build and Push Netcore Server
           path: docker

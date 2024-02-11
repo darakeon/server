@@ -1,7 +1,8 @@
-FROM darakeon/netcore
+FROM darakeon/netcore:ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-RUN dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+RUN dotnet tool install -g Microsoft.Web.LibraryManager.Cli \
+    && clean_os
 
 ENV PATH="/root/.dotnet/tools:${PATH}"
 
