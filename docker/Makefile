@@ -1,9 +1,9 @@
 MAKEFLAGS += --no-print-directory
 
 
-main: ubuntu netcore netcore_server server netcore_libman
+main: ubuntu netcore_alpine netcore_server server netcore_libman_alpine
 
-main_push: ubuntu_push netcore_push netcore_server_push server_push netcore_libman_push
+main_push: ubuntu_push netcore_alpine_push netcore_server_push server_push netcore_libman_alpine_push
 
 
 alpine:
