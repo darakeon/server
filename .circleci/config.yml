@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Build and Push Netcore Libman Alpine
           path: docker
-          command: make netcore_alpine_libman_push
+          command: make netcore_libman_alpine_push
       - run:
           name: Build and Push Netcore Libman Ubuntu
           path: docker
