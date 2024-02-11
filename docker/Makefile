@@ -56,7 +56,7 @@ netcore_libman_ubuntu_push: netcore_libman_ubuntu
 
 
 netcore_server:
-	@make MACHINE=netcore-server CONTEXT=.
+	@make single MACHINE=netcore-server CONTEXT=.
 
 netcore_server_push: netcore_server
 	@make push MACHINE=netcore-server
