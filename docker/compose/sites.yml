@@ -29,7 +29,7 @@ services:
   #    - /var/data/dfm/nh-api:/var/logs/dfm/nh
 
   dfm-sql-runner:
-    image: darakeon/dfm-sql-runner
+    image: darakeon/sql-runner
     container_name: sql-runner
     env_file:
       - /var/cfg/sql-runner/.env
