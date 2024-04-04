@@ -28,6 +28,12 @@ services:
   #    - /var/data/dfm/api:/var/www/data
   #    - /var/data/dfm/nh-api:/var/logs/dfm/nh
 
+  dfm-sql-runner:
+    image: darakeon/dfm-sql-runner
+    container_name: sql-runner
+    env_file:
+      - /var/cfg/sql-runner/.env
+
   midna:
     image: darakeon/dfm-midna
     container_name: midna
