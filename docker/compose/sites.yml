@@ -5,6 +5,10 @@ services:
   mebrak:
     image: darakeon/mebrak
     container_name: mebrak
+    healthcheck:
+      test: ["CMD", "curl" ,"https://meak.com.br"]
+      timeout: 10s
+      retries: 5
 
   dfm:
     image: darakeon/dfm-site
@@ -13,6 +17,10 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/mvc:/var/www/data
       - /var/data/dfm/nh:/var/logs/dfm/nh
+    healthcheck:
+      test: ["CMD", "curl" ,"https://dontflymoney.com/contract"]
+      timeout: 10s
+      retries: 5
 
   dfm-api:
     image: darakeon/dfm-api
@@ -21,6 +29,10 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/api:/var/www/data
       - /var/data/dfm/nh-api:/var/logs/dfm/nh
+    healthcheck:
+      test: ["CMD", "curl" ,"https://api.dontflymoney.com"]
+      timeout: 10s
+      retries: 5
 
   dfm-sql-runner:
     image: darakeon/sql-runner
@@ -38,10 +50,18 @@ services:
       - /var/data/midna/static:/var/midna/static/outside
     env_file:
       - /var/cfg/midna/prod.env
+    healthcheck:
+      test: ["CMD", "curl" ,"https://midna.dontflymoney.com"]
+      timeout: 10s
+      retries: 5
 
   curriculum:
     image: darakeon/curriculum
     container_name: curriculum
+    healthcheck:
+      test: ["CMD", "curl" ,"https://darakeon.com"]
+      timeout: 10s
+      retries: 5
 
   nginx:
     image: darakeon/server
