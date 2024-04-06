@@ -15,18 +15,12 @@ services:
       - /var/data/dfm/nh:/var/logs/dfm/nh
 
   dfm-api:
-    image: nginx:alpine
+    image: darakeon/dfm-api
     container_name: dfm-api
     volumes:
-      - /var/data/dfm/html:/usr/share/nginx/html
-
-  #dfm-api: // change port at NGINX default.conf
-  #  image: darakeon/dfm-api
-  #  container_name: dfm-api
-  #  volumes:
-  #    - /var/cfg/dfm:/var/cfg
-  #    - /var/data/dfm/api:/var/www/data
-  #    - /var/data/dfm/nh-api:/var/logs/dfm/nh
+      - /var/cfg/dfm:/var/cfg
+      - /var/data/dfm/api:/var/www/data
+      - /var/data/dfm/nh-api:/var/logs/dfm/nh
 
   dfm-sql-runner:
     image: darakeon/sql-runner
