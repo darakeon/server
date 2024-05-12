@@ -2,7 +2,7 @@ FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN apt-get install -y \
-        libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu70 \
+        libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu74 \
         liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g \
     && curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh \
     && chmod +x ./dotnet-install.sh \
