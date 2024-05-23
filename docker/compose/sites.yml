@@ -6,6 +6,7 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2703"]
+      start_period: 60s
       timeout: 10s
       retries: 5
 
@@ -19,6 +20,7 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
+      start_period: 60s
       timeout: 10s
       retries: 5
 
@@ -32,6 +34,7 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2023"]
+      start_period: 60s
       timeout: 10s
       retries: 5
 
@@ -54,6 +57,7 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "http://localhost:8627"]
+      start_period: 60s
       timeout: 10s
       retries: 5
 
@@ -63,6 +67,7 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "http://curriculum:3000"]
+      start_period: 60s
       timeout: 10s
       retries: 5
 
