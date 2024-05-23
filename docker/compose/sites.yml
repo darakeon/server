@@ -3,7 +3,7 @@ services:
   mebrak:
     image: darakeon/mebrak
     container_name: mebrak
-    restart: on-failure:3
+    #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "-k", "https://localhost:2703"]
     #  start_period: 60s
@@ -17,7 +17,7 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/mvc:/var/www/data
       - /var/data/dfm/nh:/var/logs/dfm/nh
-    restart: on-failure:3
+    #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
     #  start_period: 60s
@@ -31,7 +31,7 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/api:/var/www/data
       - /var/data/dfm/nh-api:/var/logs/dfm/nh
-    restart: on-failure:3
+    #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "-k", "https://localhost:2023"]
     #  start_period: 60s
@@ -54,7 +54,7 @@ services:
       - /var/data/midna/static:/var/midna/static/outside
     env_file:
       - /var/cfg/midna/prod.env
-    restart: on-failure:3
+    #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "http://localhost:8627"]
     #  start_period: 60s
@@ -64,7 +64,7 @@ services:
   curriculum:
     image: darakeon/curriculum
     container_name: curriculum
-    restart: on-failure:3
+    #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "http://curriculum:3000"]
     #  start_period: 60s
