@@ -4,11 +4,11 @@ services:
     image: darakeon/mebrak
     container_name: mebrak
     restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "-k", "https://localhost:2703"]
-      start_period: 60s
-      timeout: 10s
-      retries: 5
+    #healthcheck:
+    #  test: ["CMD", "curl", "-k", "https://localhost:2703"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
 
   dfm:
     image: darakeon/dfm-site
@@ -18,11 +18,11 @@ services:
       - /var/data/dfm/mvc:/var/www/data
       - /var/data/dfm/nh:/var/logs/dfm/nh
     restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
-      start_period: 60s
-      timeout: 10s
-      retries: 5
+    #healthcheck:
+    #  test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
 
   dfm-api:
     image: darakeon/dfm-api
@@ -32,11 +32,11 @@ services:
       - /var/data/dfm/api:/var/www/data
       - /var/data/dfm/nh-api:/var/logs/dfm/nh
     restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "-k", "https://localhost:2023"]
-      start_period: 60s
-      timeout: 10s
-      retries: 5
+    #healthcheck:
+    #  test: ["CMD", "curl", "-k", "https://localhost:2023"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
 
   dfm-sql-runner:
     image: darakeon/sql-runner
@@ -55,21 +55,21 @@ services:
     env_file:
       - /var/cfg/midna/prod.env
     restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "http://localhost:8627"]
-      start_period: 60s
-      timeout: 10s
-      retries: 5
+    #healthcheck:
+    #  test: ["CMD", "curl", "http://localhost:8627"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
 
   curriculum:
     image: darakeon/curriculum
     container_name: curriculum
     restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "http://curriculum:3000"]
-      start_period: 60s
-      timeout: 10s
-      retries: 5
+    #healthcheck:
+    #  test: ["CMD", "curl", "http://curriculum:3000"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
 
   nginx:
     image: darakeon/server
