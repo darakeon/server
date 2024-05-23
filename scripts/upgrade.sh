@@ -4,7 +4,11 @@
 
 cd /home/ubuntu/server
 
+git stash
+
 git pull
+
+git stash pop
 
 cd scripts
 
