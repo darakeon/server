@@ -14,7 +14,8 @@
 	},
 	"homepage": "https://github.com/darakeon/dfm#readme",
 	"dependencies": {
-		"aws-sdk": "^2.1618.0",
+		"@aws-sdk/client-ec2": "^3.583.0",
+		"@aws-sdk/credential-providers": "^3.583.0",
 		"public-ip": "^6.0.2"
 	},
 	"type": "module"

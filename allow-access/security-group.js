@@ -1,5 +1,6 @@
 import { publicIpv4 } from 'public-ip'
-import AWS from 'aws-sdk'
+import { fromIni } from '@aws-sdk/credential-providers';
+import { EC2 } from '@aws-sdk/client-ec2';
 import fs from 'fs'
 
 // config file is ignored by git
@@ -18,11 +19,12 @@ const { region, securityGroup, apiVersion, ports, profile } = JSON.parse(
 // aws_secret_access_key = {}
 
 async function updateSecurityGroup() {
-	const credentials = new AWS.SharedIniFileCredentials({profile})
+	const credentials = fromIni({profile})
 
-	AWS.config.update({region, credentials})
-
-	const ec2 = new AWS.EC2({apiVersion})
+	const ec2 = new EC2({
+		region,
+		credentials
+	})
 	const params = { GroupNames: [securityGroup] }
 
 	const ip = await publicIpv4() + '/32'
