@@ -88,15 +88,15 @@ services:
       - midna
       - dfm-api
 
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    volumes:
-      - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /var/data/prometheus:/prometheus
-    depends_on:
-      - dfm
-      - mebrak
+  #prometheus:
+  #  image: prom/prometheus
+  #  container_name: prometheus
+  #  volumes:
+  #    - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #    - /var/data/prometheus:/prometheus
+  #  depends_on:
+  #    - dfm
+  #    - mebrak
 
   grafana:
     image: grafana/grafana
