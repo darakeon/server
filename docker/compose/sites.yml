@@ -38,11 +38,11 @@ services:
     #  timeout: 60s
     #  retries: 2
 
-  #dfm-sql-runner:
-  #  image: darakeon/sql-runner
-  #  container_name: sql-runner
-  #  env_file:
-  #    - /var/cfg/sql-runner/.env
+  dfm-sql-runner:
+    image: darakeon/sql-runner
+    container_name: sql-runner
+    env_file:
+      - /var/cfg/sql-runner/.env
 
   midna:
     image: darakeon/dfm-midna
