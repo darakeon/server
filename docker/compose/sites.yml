@@ -5,6 +5,7 @@ services:
   mebrak:
     image: darakeon/mebrak
     container_name: mebrak
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2703"]
       timeout: 10s
@@ -17,6 +18,7 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/mvc:/var/www/data
       - /var/data/dfm/nh:/var/logs/dfm/nh
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
       timeout: 10s
@@ -29,6 +31,7 @@ services:
       - /var/cfg/dfm:/var/cfg
       - /var/data/dfm/api:/var/www/data
       - /var/data/dfm/nh-api:/var/logs/dfm/nh
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "-k", "https://localhost:2023"]
       timeout: 10s
@@ -50,6 +53,7 @@ services:
       - /var/data/midna/static:/var/midna/static/outside
     env_file:
       - /var/cfg/midna/prod.env
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "http://localhost:8627"]
       timeout: 10s
@@ -58,6 +62,7 @@ services:
   curriculum:
     image: darakeon/curriculum
     container_name: curriculum
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "http://curriculum:3000"]
       timeout: 10s
