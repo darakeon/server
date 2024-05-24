@@ -77,8 +77,8 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.1
-            memory: 100M
+            cpus: 0.2
+            memory: 200M
     #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "http://localhost:8627"]
