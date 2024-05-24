@@ -6,8 +6,8 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
-            memory: 150M
+            cpus: 0.05
+            memory: 100M
     #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "-k", "https://localhost:2703"]
@@ -25,7 +25,7 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
+            cpus: 0.1
             memory: 200M
     #restart: on-failure:3
     #healthcheck:
@@ -44,7 +44,7 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
+            cpus: 0.1
             memory: 200M
     #restart: on-failure:3
     #healthcheck:
@@ -61,7 +61,7 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
+            cpus: 0.1
             memory: 100M
 
   midna:
@@ -77,7 +77,7 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
+            cpus: 0.05
             memory: 100M
     #restart: on-failure:3
     #healthcheck:
@@ -93,7 +93,7 @@ services:
       resources:
           limits:
             cpus: 0.01
-            memory: 100M
+            memory: 20M
     #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "http://curriculum:3000"]
@@ -120,7 +120,7 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.01
+            cpus: 0.05
             memory: 100M
 
   #prometheus:
