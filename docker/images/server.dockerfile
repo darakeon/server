@@ -22,6 +22,8 @@ COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/images/scripts/alpine_nginx_and_tls /var/www/nginx_and_tls
 RUN chmod +x /var/www/nginx_and_tls
 
+COPY docker/nginx/maintenance /var/www
+
 RUN adduser --system --no-create-home --shell /bin/false www-data
 
 ENV ASPNETCORE_URLS=http://+:1986
