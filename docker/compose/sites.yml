@@ -111,12 +111,6 @@ services:
       - /var/data/letsencrypt:/etc/letsencrypt
       - /var/data/nginx/log:/var/log/nginx/
       - /var/data/midna/static:/var/midna/static/outside
-    depends_on:
-      - dfm
-      - mebrak
-      - curriculum
-      - midna
-      - dfm-api
     deploy:
       resources:
           limits:
