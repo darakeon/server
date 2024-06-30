@@ -1,18 +1,18 @@
 {
-	"name": "browser-tests",
+	"name": "allow-access",
 	"version": "406.0.0",
-	"description": "DfM Site Tests",
+	"description": "Allow Access",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/darakeon/dfm.git"
+		"url": "git+https://github.com/darakeon/server.git"
 	},
 	"author": "Dara Keon",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/darakeon/dfm/issues"
+		"url": "https://github.com/darakeon/server/issues"
 	},
-	"homepage": "https://github.com/darakeon/dfm#readme",
+	"homepage": "https://github.com/darakeon/server#readme",
 	"dependencies": {
 		"@aws-sdk/client-ec2": "^3.583.0",
 		"@aws-sdk/credential-providers": "^3.583.0",
