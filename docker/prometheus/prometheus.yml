@@ -25,13 +25,6 @@ scrape_configs:
     static_configs:
       - targets: ['dfm:2011']
 
-  - job_name: mebrak
-    scheme: https
-    tls_config:
-      insecure_skip_verify: true
-    static_configs:
-      - targets: ['mebrak:2703']
-
   - job_name: prometheus
     static_configs:
       - targets: ['localhost:9090']
