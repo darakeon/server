@@ -71,21 +71,6 @@ services:
     #  timeout: 60s
     #  retries: 2
 
-  curriculum:
-    image: darakeon/curriculum
-    container_name: curriculum
-    deploy:
-      resources:
-          limits:
-            cpus: 0.01
-            memory: 20M
-    #restart: on-failure:3
-    #healthcheck:
-    #  test: ["CMD", "curl", "http://curriculum:3000"]
-    #  start_period: 60s
-    #  timeout: 60s
-    #  retries: 2
-
   nginx:
     image: darakeon/server
     container_name: server
