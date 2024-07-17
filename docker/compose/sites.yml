@@ -1,5 +1,20 @@
 services:
 
+  mebrak:
+    image: darakeon/mebrak
+    container_name: mebrak
+    deploy:
+      resources:
+          limits:
+            cpus: 0.05
+            memory: 100M
+    #restart: on-failure:3
+    #healthcheck:
+    #  test: ["CMD", "curl", "-k", "https://localhost:2703"]
+    #  start_period: 60s
+    #  timeout: 60s
+    #  retries: 2
+
   dfm:
     image: darakeon/dfm-site
     container_name: dfm
@@ -110,6 +125,7 @@ services:
   #    - /var/data/prometheus:/prometheus
   #  depends_on:
   #    - dfm
+  #    - mebrak
   #  deploy:
   #    resources:
   #        limits:
