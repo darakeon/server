@@ -11,6 +11,6 @@ echo 'export PS1="\n\n[\[\033[01;30m\]\A\[\033[00m\]] 🐳 \$(docker ps -q | wc 
 
 cd ~/server/scripts
 
-./config.sh
+sudo ./config.sh
 
 ./upgrade.sh
