@@ -2,25 +2,25 @@
 set -e
 
 cd /var
-sudo mkdir cfg
+if [ ! -e cfg ]; then mkdir cfg; fi
 cd cfg
 
-mkdir dfm
+if [ ! -e dfm ]; then mkdir dfm; fi
 cd dfm
-echo $PWD/db.amazon.json > db.amazon.json && nano db.amazon.json
-echo $PWD/smtp.amazon.json > smtp.amazon.json && nano smtp.amazon.json
-echo $PWD/s3.amazon.json > s3.amazon.json && nano s3.amazon.json
-echo $PWD/sqs.amazon.json > sqs.amazon.json && nano sqs.amazon.json
-echo $PWD/login.amazon.json > login.amazon.json && nano login.amazon.json
+if [ ! -e db.amazon.json ]; then echo $PWD/db.amazon.json > db.amazon.json && nano db.amazon.json; fi
+if [ ! -e smtp.amazon.json ]; then echo $PWD/smtp.amazon.json > smtp.amazon.json && nano smtp.amazon.json; fi
+if [ ! -e s3.amazon.json ]; then echo $PWD/s3.amazon.json > s3.amazon.json && nano s3.amazon.json; fi
+if [ ! -e sqs.amazon.json ]; then echo $PWD/sqs.amazon.json > sqs.amazon.json && nano sqs.amazon.json; fi
+if [ ! -e login.amazon.json ]; then echo $PWD/login.amazon.json > login.amazon.json && nano login.amazon.json; fi
 cd ..
 
-mkdir sql-sunner
+if [ ! -e sql-sunner ]; then mkdir sql-sunner; fi
 cd sql-sunner
-echo $PWD/prod.env > prod.env && nano prod.env
-echo $PWD/prod.py > prod.py && nano prod.py
+if [ ! -e prod.env ]; then echo $PWD/prod.env > prod.env && nano prod.env; fi
+if [ ! -e prod.py ]; then echo $PWD/prod.py > prod.py && nano prod.py; fi
 cd ..
 
-mkdir midna
+if [ ! -e midna ]; then mkdir midna; fi
 cd midna
-echo $PWD/.env > .env && nano .env
+if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
