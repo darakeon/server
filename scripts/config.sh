@@ -15,7 +15,7 @@ echo $PWD/login.amazon.json > login.amazon.json && nano login.amazon.json
 cd ..
 
 mkdir sql-sunner
-sql-sunner
+cd sql-sunner
 echo $PWD/prod.env > prod.env && nano prod.env
 echo $PWD/prod.py > prod.py && nano prod.py
 cd ..
