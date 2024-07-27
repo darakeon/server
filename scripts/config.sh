@@ -14,13 +14,13 @@ if [ ! -e sqs.amazon.json ]; then echo $PWD/sqs.amazon.json > sqs.amazon.json &&
 if [ ! -e login.amazon.json ]; then echo $PWD/login.amazon.json > login.amazon.json && nano login.amazon.json; fi
 cd ..
 
-if [ ! -e sql-sunner ]; then mkdir sql-sunner; fi
-cd sql-sunner
+if [ ! -e midna ]; then mkdir midna; fi
+cd midna
 if [ ! -e prod.env ]; then echo $PWD/prod.env > prod.env && nano prod.env; fi
 if [ ! -e prod.py ]; then echo $PWD/prod.py > prod.py && nano prod.py; fi
 cd ..
 
-if [ ! -e midna ]; then mkdir midna; fi
-cd midna
+if [ ! -e sql-runner ]; then mkdir sql-runner; fi
+cd sql-runner
 if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
