@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 cd /var
 sudo mkdir cfg && cd cfg
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 cd ~
 git clone https://github.com/darakeon/server.git

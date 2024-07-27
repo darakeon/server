@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository ##
 
 # Add Docker's official GPG key:
