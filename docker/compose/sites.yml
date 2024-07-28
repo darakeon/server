@@ -111,6 +111,8 @@ services:
       - /var/data/letsencrypt:/etc/letsencrypt
       - /var/data/nginx/log:/var/log/nginx/
       - /var/data/midna/static:/var/midna/static/outside
+    env_file:
+      - /var/cfg/tls/.env
     deploy:
       resources:
           limits:

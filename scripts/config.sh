@@ -24,3 +24,8 @@ if [ ! -e sql-runner ]; then mkdir sql-runner; fi
 cd sql-runner
 if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
+
+if [ ! -e tls ]; then mkdir tls; fi
+cd tls
+if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
+cd ..

@@ -41,12 +41,15 @@ namespace TLS
 
 			issuedPath = $"/etc/letsencrypt/{domain}.issued";
 
+			var email =
+				Environment.GetEnvironmentVariable("CERTBOT_EMAIL");
+
 			process = new Process
 			{
 				StartInfo = new ProcessStartInfo
 				{
 					FileName = "certbot",
-					Arguments = $"--nginx -n --agree-tos -d {domain} -m your-mail",
+					Arguments = $"--nginx -n --agree-tos -d {domain} -m {email}",
 					RedirectStandardOutput = true,
 					RedirectStandardError = true,
 					UseShellExecute = false,
