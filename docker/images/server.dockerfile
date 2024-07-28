@@ -17,8 +17,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apk add certbot certbot-nginx
 RUN mkdir /var/log/letsencrypt
-COPY docker/nginx/default.conf /etc/nginx/conf.d/
-COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY docker/nginx/*.conf /etc/nginx/conf.d/
+RUN mv /etc/nginx/conf.d/nginx.conf /etc/nginx/nginx.conf
 COPY docker/images/scripts/alpine_nginx_and_tls /var/www/nginx_and_tls
 RUN chmod +x /var/www/nginx_and_tls
 
