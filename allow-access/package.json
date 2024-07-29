@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@aws-sdk/client-ec2": "^3.583.0",
 		"@aws-sdk/credential-providers": "^3.583.0",
-		"public-ip": "^6.0.2"
+		"public-ip": "^7.0.1"
 	},
 	"type": "module"
 }
