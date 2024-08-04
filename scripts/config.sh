@@ -29,3 +29,5 @@ if [ ! -e tls ]; then mkdir tls; fi
 cd tls
 if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
+
+sudo chmod 777 /var/log
