@@ -25,8 +25,8 @@ services:
     deploy:
       resources:
           limits:
-            cpus: 0.2
-            memory: 200M
+            cpus: 0.4
+            memory: 400M
     #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
