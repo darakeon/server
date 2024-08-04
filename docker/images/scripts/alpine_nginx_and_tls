@@ -4,7 +4,7 @@ chmod -R 755 /var/lib/nginx
 
 if [ ! -e /etc/letsencrypt/options-ssl-nginx.conf ]; then
     mv /etc/nginx/conf.d/ /etc/nginx/conf.d+wait/;
-    certbot -n -m $CERTBOT_EMAIL --nginx --agree-tos -d darakeon.com -d dontflymoney.com -d meak.com.br;
+    certbot -n -m $CERTBOT_EMAIL --nginx --agree-tos -d darakeon.com -d dontflymoney.com -d meak.com.br || rm -r /etc/letsencrypt/*;
     mv /etc/nginx/conf.d+wait/ /etc/nginx/conf.d/;
 fi
 
