@@ -2,7 +2,7 @@
 
 ./print-date.sh start upgrade
 
-cd /home/ubuntu/server
+cd ~/server
 
 git stash
 
