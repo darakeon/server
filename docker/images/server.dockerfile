@@ -8,6 +8,7 @@ RUN dotnet publish /var/tls/TLS.csproj -o /var/www
 
 
 FROM darakeon/netcore-server
+LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 COPY --from=builder /var/www /var/www
 
