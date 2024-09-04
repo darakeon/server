@@ -59,6 +59,10 @@ jobs:
           name: Build and Push Server
           path: docker
           command: make server_push
+      - run:
+          name: Build and Push GitHub CLI
+          path: docker
+          command: make github_cli_push
 
 workflows:
   deploy:

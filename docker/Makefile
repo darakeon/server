@@ -91,6 +91,13 @@ talisman_push: talisman
 	@make push MACHINE=talisman
 
 
+github_cli:
+	@make single MACHINE=github-cli
+
+github_cli_push: github_cli
+	@make push MACHINE=github-cli
+
+
 single:
 	@echo "Building ${MACHINE}$(if ${DISTRO}, ${DISTRO},)..."
 	@docker build ${CONTEXT} --progress plain -f images/${MACHINE}$(if ${DISTRO},-${DISTRO},).dockerfile -t darakeon/${MACHINE}$(if ${DISTRO},:${DISTRO},) --network=host
