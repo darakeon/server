@@ -1,4 +1,5 @@
 MAKEFLAGS += --no-print-directory
+CONTEXT=.
 
 
 main: ubuntu netcore_alpine netcore_server server netcore_libman_alpine
@@ -7,84 +8,84 @@ main_push: ubuntu_push netcore_alpine_push netcore_server_push server_push netco
 
 
 alpine:
-	@make single MACHINE=alpine CONTEXT=.
+	@make single MACHINE=alpine
 
 alpine_push: alpine
 	@make push MACHINE=alpine
 
 
 ubuntu:
-	@make single MACHINE=ubuntu CONTEXT=.
+	@make single MACHINE=ubuntu
 
 ubuntu_push: ubuntu
 	@make push MACHINE=ubuntu
 
 
 dockery:
-	@make single MACHINE=dockery CONTEXT=.
+	@make single MACHINE=dockery
 
 dockery_push: dockery
 	@make push MACHINE=dockery
 
 
 netcore_alpine:
-	@make single MACHINE=netcore DISTRO=alpine CONTEXT=.
+	@make single MACHINE=netcore DISTRO=alpine
 
 netcore_alpine_push: netcore_alpine
 	@make push MACHINE=netcore DISTRO=alpine
 
 
 netcore_ubuntu:
-	@make single MACHINE=netcore DISTRO=ubuntu CONTEXT=.
+	@make single MACHINE=netcore DISTRO=ubuntu
 
 netcore_ubuntu_push: netcore_ubuntu
 	@make push MACHINE=netcore DISTRO=ubuntu
 
 
 netcore_libman_alpine:
-	@make single MACHINE=netcore-libman DISTRO=alpine CONTEXT=.
+	@make single MACHINE=netcore-libman DISTRO=alpine
 
 netcore_libman_alpine_push: netcore_libman_alpine
 	@make push MACHINE=netcore-libman DISTRO=alpine
 
 
 netcore_libman_ubuntu:
-	@make single MACHINE=netcore-libman DISTRO=ubuntu CONTEXT=.
+	@make single MACHINE=netcore-libman DISTRO=ubuntu
 
 netcore_libman_ubuntu_push: netcore_libman_ubuntu
 	@make push MACHINE=netcore-libman DISTRO=ubuntu
 
 
 netcore_server:
-	@make single MACHINE=netcore-server CONTEXT=.
+	@make single MACHINE=netcore-server
 
 netcore_server_push: netcore_server
 	@make push MACHINE=netcore-server
 
 
 server:
-	@make single MACHINE=server CONTEXT=..
+	@make single MACHINE=server.
 
 server_push: server
 	@make push MACHINE=server
 
 
 aws:
-	@make single MACHINE=aws CONTEXT=.
+	@make single MACHINE=aws
 
 aws_push: aws
 	@make push MACHINE=aws
 
 
 aws_terraform:
-	@make single MACHINE=aws-terraform CONTEXT=.
+	@make single MACHINE=aws-terraform
 
 aws_terraform_push: aws_terraform
 	@make push MACHINE=aws-terraform
 
 
 talisman:
-	@make single MACHINE=talisman CONTEXT=.
+	@make single MACHINE=talisman
 
 talisman_push: talisman
 	@make push MACHINE=talisman
