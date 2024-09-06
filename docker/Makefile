@@ -64,7 +64,7 @@ netcore_server_push: netcore_server
 
 
 server:
-	@make single MACHINE=server.
+	@make single MACHINE=server CONTEXT=..
 
 server_push: server
 	@make push MACHINE=server
