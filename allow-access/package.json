@@ -15,7 +15,7 @@
 	"homepage": "https://github.com/darakeon/server#readme",
 	"dependencies": {
 		"@aws-sdk/client-ec2": "^3.641.0",
-		"@aws-sdk/credential-providers": "^3.637.0",
+		"@aws-sdk/credential-providers": "^3.645.0",
 		"public-ip": "^7.0.1"
 	},
 	"type": "module"
