@@ -1,0 +1,15 @@
+services:
+  robot_export:
+    image: "darakeon/dfm-robot"
+    container_name: robot_export
+    volumes:
+      - "/var/cfg/dfm:/var/cfg"
+      - "/var/data/dfm/robot-export:/var/robot/data"
+      - "/var/data/dfm/nh:/var/logs/dfm/nh"
+    environment:
+      - TASK=export
+    deploy:
+      resources:
+          limits:
+            cpus: 0.2
+            memory: 200M

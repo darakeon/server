@@ -1,0 +1,15 @@
+services:
+  robot_finish:
+    image: "darakeon/dfm-robot"
+    container_name: robot_finish
+    volumes:
+      - "/var/cfg/dfm:/var/cfg"
+      - "/var/data/dfm/robot-finish:/var/robot/data"
+      - "/var/data/dfm/nh:/var/logs/dfm/nh"
+    environment:
+      - TASK=finish
+    deploy:
+      resources:
+          limits:
+            cpus: 0.2
+            memory: 200M

@@ -1,13 +1,13 @@
 services:
-  robot_wipe:
+  robot_expire:
     image: "darakeon/dfm-robot"
-    container_name: robot_wipe
+    container_name: robot_expire
     volumes:
       - "/var/cfg/dfm:/var/cfg"
-      - "/var/data/dfm/robot-wipe:/var/robot/data"
+      - "/var/data/dfm/robot-expire:/var/robot/data"
       - "/var/data/dfm/nh:/var/logs/dfm/nh"
     environment:
-      - TASK=2
+      - TASK=expire
     deploy:
       resources:
           limits:
