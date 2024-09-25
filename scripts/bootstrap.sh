@@ -14,6 +14,6 @@ cd ~/server/scripts
 sudo ./config.sh
 
 sudo mkdir /var/log/cron
-sudo chmod +w /var/log/cron
+sudo chmod 777 /var/log/cron
 
 ./upgrade.sh
