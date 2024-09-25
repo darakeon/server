@@ -23,12 +23,12 @@
 SHELL=/bin/bash
 
 # m         h   dom mon dow   command
-@reboot                       cd ~/server/scripts && source ./compose.sh sites             &>> /var/log/cron/sites.log
-00,30       *   *   *   *     cd ~/server/scripts && source ./upgrade.sh                   &>> /var/log/cron/upgrade.log
-#00,15,30,45 *   *   *   *     cd ~/server/scripts && source ./compose.sh robot-1-schedules &>> /var/log/cron/schedules.log
-#27          00  *   *   *     cd ~/server/scripts && source ./compose.sh robot-2-wipe      &>> /var/log/cron/wipe.log
-#37          */2 *   *   *     cd ~/server/scripts && source ./compose.sh robot-3-import    &>> /var/log/cron/import.log
-#47          01  *   *   *     cd ~/server/scripts && source ./compose.sh robot-4-finish    &>> /var/log/cron/finish.log
-#57          */2 *   *   *     cd ~/server/scripts && source ./compose.sh robot-5-requeue   &>> /var/log/cron/requeue.log
-#07          */2 *   *   *     cd ~/server/scripts && source ./compose.sh robot-6-export    &>> /var/log/cron/export.log
-#17          02  *   *   *     cd ~/server/scripts && source ./compose.sh robot-7-expire    &>> /var/log/cron/expire.log
+@reboot                       cd ~/server/scripts && source ./compose.sh sites       &>> /var/log/cron/sites.log
+00,30       *   *   *   *     cd ~/server/scripts && source ./upgrade.sh             &>> /var/log/cron/upgrade.log
+00,15,30,45 *   *   *   *     cd ~/server/scripts && source ./robot-run.sh schedules &>> /var/log/cron/schedules.log
+27          00  *   *   *     cd ~/server/scripts && source ./robot-run.sh wipe      &>> /var/log/cron/wipe.log
+37          */2 *   *   *     cd ~/server/scripts && source ./robot-run.sh import    &>> /var/log/cron/import.log
+47          01  *   *   *     cd ~/server/scripts && source ./robot-run.sh finish    &>> /var/log/cron/finish.log
+57          */2 *   *   *     cd ~/server/scripts && source ./robot-run.sh requeue   &>> /var/log/cron/requeue.log
+07          */2 *   *   *     cd ~/server/scripts && source ./robot-run.sh export    &>> /var/log/cron/export.log
+17          02  *   *   *     cd ~/server/scripts && source ./robot-run.sh expire    &>> /var/log/cron/expire.log
