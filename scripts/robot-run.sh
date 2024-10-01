@@ -6,7 +6,7 @@ TASK=$1
 
 docker pull darakeon/dfm-robot
 
-docker run -it \
+docker run \
 	--name robot_$TASK \
 	-e TASK=$TASK \
 	-v /var/cfg/dfm:/var/cfg \
