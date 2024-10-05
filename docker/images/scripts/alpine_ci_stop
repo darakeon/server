@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
 circleci-agent step halt
