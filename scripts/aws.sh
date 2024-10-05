@@ -25,3 +25,6 @@ if [ ! -e ~/.aws/credentials ]; then \
     echo "aws_secret_access_key = " >> ~/.aws/credentials; \
     nano ~/.aws/credentials; \
 fi
+
+sudo bash -c 'echo "AWS_LAMBDA_NAME=" >> /etc/environment'
+sudo nano /etc/environment
