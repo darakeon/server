@@ -8,7 +8,6 @@ aws lambda invoke \
 	--cli-binary-format raw-in-base64-out \
 	--function-name $AWS_LAMBDA_NAME \
 	--invocation-type Event \
-	--cli-binary-format raw-in-base64-out \
 	--payload '"$TASK"' \
 	response.json
 
