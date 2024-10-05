@@ -4,16 +4,13 @@ TASK=$1
 
 ./print-date.sh start docker run robot for $TASK
 
-docker pull darakeon/dfm-robot
-
-docker run \
-	--name robot_$TASK \
-	-e TASK=$TASK \
-	-v /var/cfg/dfm:/var/cfg \
-	-v /var/data/dfm/robot-$TASK:/var/robot/data \
-	-v /var/data/dfm/nh-$TASK:/var/logs/dfm/nh \
-	--rm \
-	darakeon/dfm-robot
+aws lambda invoke \
+	--cli-binary-format raw-in-base64-out \
+	--function-name $AWS_LAMBDA_NAME \
+	--invocation-type Event \
+	--cli-binary-format raw-in-base64-out \
+	--payload '"$TASK"' \
+	response.json
 
 RUN_RESULT=$?
 
