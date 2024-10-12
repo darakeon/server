@@ -8,27 +8,31 @@ tasks_by_cpu:
 	@top -o %CPU -b -n 1
 
 status:
-	@echo "CPU $$(make cpu)"
-	@echo "MEM $$(make memory)"
-	@echo "DSK $$(make disk)"
+	@echo "CPU $$(make cpu_percent && echo ' / ' && make cpu_total)" | tr -d '\n'
+	@echo ""
+	@echo "MEM $$(make memory_percent && echo ' / ' && make memory_total)" | tr -d '\n'
+	@echo ""
+	@echo "DSK $$(make disk_percent && echo ' / ' && make disk_total)" | tr -d '\n'
+	@echo ""
+	@docker stats --no-stream
 
-memory:
+memory_percent:
 	@free -t | awk 'NR == 4 {print $$3/$$2*100 "%"}'
 
-all_memory:
-	@free -t
+memory_total:
+	@free -t | awk 'NR == 4 {print $$2/1024 "M"}'
 
-cpu:
+cpu_percent:
 	@vmstat | awk 'NR == 3 {print 100-$$15 "%"}'
 
-all_cpu:
-	@vmstat
+cpu_total:
+	@lscpu | grep CPU\(s\): | awk 'NR == 1 {print $$2}'
 
-disk:
+disk_percent:
 	@df -h | grep /dev/root | awk '{print $$5}'
 
-all_disk:
-	@df -h
+disk_total:
+	@df -h | grep /dev/root | awk '{print $$2}'
 
 restart_docker:
 	@sudo systemctl restart docker
