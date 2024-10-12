@@ -1,8 +1,16 @@
+MAKEFLAGS += --no-print-directory
+
+
 tasks_by_memory:
 	@top -o %MEM -b -n 1
 
 tasks_by_cpu:
 	@top -o %CPU -b -n 1
+
+status:
+	@echo "CPU $$(make cpu)"
+	@echo "MEM $$(make memory)"
+	@echo "DSK $$(make disk)"
 
 memory:
 	@free -t | awk 'NR == 4 {print $$3/$$2*100 "%"}'
