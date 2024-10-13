@@ -78,7 +78,7 @@ services:
       resources:
           limits:
             cpus: 0.2
-            memory: 150M
+            memory: 200M
     #restart: on-failure:3
     #healthcheck:
     #  test: ["CMD", "curl", "http://localhost:8627"]
