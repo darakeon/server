@@ -3,9 +3,9 @@ set -e
 
 apt install make
 
-echo "#!/bin/bash" > /usr/bin/status
-echo "" >> /usr/bin/status
-echo "cd ~/server" >> /usr/bin/status
-echo "make status" >> /usr/bin/status
+echo "#!/bin/bash" > /usr/bin/please
+echo "" >> /usr/bin/please
+echo "cd ~/server" >> /usr/bin/please
+echo "make \$1" >> /usr/bin/please
 
-chmod +x /usr/bin/status
+chmod +x /usr/bin/please
