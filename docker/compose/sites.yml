@@ -8,12 +8,12 @@ services:
           limits:
             cpus: 0.05
             memory: 75M
-    #restart: on-failure:3
-    #healthcheck:
-    #  test: ["CMD", "curl", "-k", "https://localhost:2703"]
-    #  start_period: 60s
-    #  timeout: 60s
-    #  retries: 2
+    restart: on-failure:3
+    healthcheck:
+      test: ["CMD", "curl", "-k", "https://localhost:2703"]
+      start_period: 60s
+      timeout: 60s
+      retries: 2
 
   dfm:
     image: darakeon/dfm-site
