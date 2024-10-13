@@ -1,6 +1,18 @@
 MAKEFLAGS += --no-print-directory
 
 
+help:
+	@echo "- tasks_by_memory"
+	@echo "- tasks_by_cpu"
+	@echo "- status"
+	@echo "- memory_percent"
+	@echo "- memory_total"
+	@echo "- cpu_percent"
+	@echo "- cpu_total"
+	@echo "- disk_percent"
+	@echo "- disk_total"
+	@echo "- restart_docker"
+
 tasks_by_memory:
 	@top -o %MEM -b -n 1
 
