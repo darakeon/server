@@ -8,7 +8,7 @@ cd ~/server/scripts
 ./docker.sh
 ./aws.sh
 
-echo 'export PS1="\n\n[\[\033[01;30m\]\A\[\033[00m\]] 🐳 \$(docker ps -q | wc -l)/\$(docker ps -a -q | wc -l) \[\033[01;31m\]\u\[\033[00m\]@\[\033[01;35m\]\`if [[ \$PWD = /mnt/c* ]]; then echo \"#\"; else echo \"&\"; fi\`/\W\[\033[00m\]$ "' >> ~/.bashrc
+echo 'export PS1="\n\n[\e[01;30m\A\e[00m] 🐳 \$(docker ps -q | wc -l)/\$(docker ps -a -q | wc -l) \e[01;31m\u\e[00m@\e[01;35m\`if [[ \$PWD = /mnt/c* ]]; then echo \"#\"; else echo \"&\"; fi\`/\W\e[00m$ "' >> ~/.bashrc
 
 sudo cp ~/server/docker/images/scripts/ubuntu_maintain /usr/bin/maintain
 sudo chmod +x /usr/bin/maintain
