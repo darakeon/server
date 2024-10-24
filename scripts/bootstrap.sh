@@ -17,6 +17,7 @@ cd ~/server/scripts
 
 sudo ./shortcuts.sh
 sudo ./config.sh
+sudo ./nat.sh
 
 sudo mkdir /var/log/cron
 sudo chmod 777 /var/log/cron
