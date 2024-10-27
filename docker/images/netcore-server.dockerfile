@@ -15,10 +15,10 @@ RUN apk add --no-cache icu-libs icu-data-full
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 RUN echo "echo" >> ~/.bashrc
-RUN echo "printf '\[\e[38;5;46m\]'" >> ~/.bashrc
+RUN echo "printf '\e[38;5;46m'" >> ~/.bashrc
 RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
 RUN echo "echo -------------------------------- DOTNET RUNTIME --------------------------------" >> ~/.bashrc
 RUN echo "echo --------------------------------------------------------------------------------" >> ~/.bashrc
-RUN echo "printf '\[\e[38;5;51m\]'" >> ~/.bashrc
+RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
 RUN echo "dotnet --info" >> ~/.bashrc
-RUN echo "printf '\[\e[38;5;253m\]'" >> ~/.bashrc
+RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
