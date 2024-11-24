@@ -1,6 +1,6 @@
 MAKEFLAGS += --no-print-directory
 CONTEXT=.
-NETCORE=net8
+NETCORE=net9
 
 
 main: ubuntu netcore_alpine netcore_server server netcore_libman_alpine
