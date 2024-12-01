@@ -1,7 +1,7 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-ARG NETCORE="9"
+ARG NETCORE="8"
 ENV NETCORE=$NETCORE
 
 RUN apt-get install -y \

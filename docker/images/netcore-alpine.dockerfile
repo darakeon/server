@@ -1,7 +1,7 @@
 FROM darakeon/alpine
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
-ARG NETCORE="9"
+ARG NETCORE="8"
 ENV NETCORE=$NETCORE
 
 RUN apk add bash icu-libs krb5-libs libgcc libintl libstdc++ zlib \
