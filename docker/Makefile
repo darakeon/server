@@ -1,6 +1,6 @@
 MAKEFLAGS += --no-print-directory
 CONTEXT=.
-NETCORE=net9
+NETCORE=9
 
 
 main: ubuntu netcore_alpine netcore_server server netcore_libman_alpine
@@ -30,38 +30,38 @@ dockery_push: dockery
 
 
 netcore_alpine:
-	@make single MACHINE=netcore DISTRO=alpine TAG=alpine-${NETCORE}
+	@make single MACHINE=netcore DISTRO=alpine TAG=alpine-net${NETCORE}
 
 netcore_alpine_push: netcore_alpine
-	@make push MACHINE=netcore DISTRO=alpine TAG=alpine-${NETCORE}
+	@make push MACHINE=netcore DISTRO=alpine TAG=alpine-net${NETCORE}
 
 
 netcore_ubuntu:
-	@make single MACHINE=netcore DISTRO=ubuntu TAG=ubuntu-${NETCORE}
+	@make single MACHINE=netcore DISTRO=ubuntu TAG=ubuntu-net${NETCORE}
 
 netcore_ubuntu_push: netcore_ubuntu
-	@make push MACHINE=netcore DISTRO=ubuntu TAG=ubuntu-${NETCORE}
+	@make push MACHINE=netcore DISTRO=ubuntu TAG=ubuntu-net${NETCORE}
 
 
 netcore_libman_alpine:
-	@make single MACHINE=netcore-libman DISTRO=alpine TAG=alpine-${NETCORE}
+	@make single MACHINE=netcore-libman DISTRO=alpine TAG=alpine-net${NETCORE}
 
 netcore_libman_alpine_push: netcore_libman_alpine
-	@make push MACHINE=netcore-libman DISTRO=alpine TAG=alpine-${NETCORE}
+	@make push MACHINE=netcore-libman DISTRO=alpine TAG=alpine-net${NETCORE}
 
 
 netcore_libman_ubuntu:
-	@make single MACHINE=netcore-libman DISTRO=ubuntu TAG=ubuntu-${NETCORE}
+	@make single MACHINE=netcore-libman DISTRO=ubuntu TAG=ubuntu-net${NETCORE}
 
 netcore_libman_ubuntu_push: netcore_libman_ubuntu
-	@make push MACHINE=netcore-libman DISTRO=ubuntu TAG=ubuntu-${NETCORE}
+	@make push MACHINE=netcore-libman DISTRO=ubuntu TAG=ubuntu-net${NETCORE}
 
 
 netcore_server:
-	@make single MACHINE=netcore-server TAG=${NETCORE}
+	@make single MACHINE=netcore-server TAG=net${NETCORE}
 
 netcore_server_push: netcore_server
-	@make push MACHINE=netcore-server TAG=${NETCORE}
+	@make push MACHINE=netcore-server TAG=net${NETCORE}
 
 
 server:
@@ -101,13 +101,18 @@ github_cli_push: github_cli
 
 single:
 	@echo "Building ${MACHINE}$(if ${DISTRO}, ${DISTRO},)..."
-	@docker build ${CONTEXT} --progress plain -f images/${MACHINE}$(if ${DISTRO},-${DISTRO},).dockerfile -t darakeon/${MACHINE}$(if ${DISTRO},:${DISTRO},) --network=host
-	@docker tag darakeon/${MACHINE}$(if ${DISTRO},:${DISTRO},) darakeon-${MACHINE}$(if ${DISTRO},-${DISTRO},)
+	@docker build ${CONTEXT} --progress plain \
+		-f images/${MACHINE}$(if ${DISTRO},-${DISTRO},).dockerfile \
+		-t darakeon-${MACHINE}$(if ${DISTRO},-${DISTRO},) \
+		--build-arg NETCORE=${NETCORE} \
+		--network=host
+	@docker tag darakeon-${MACHINE}$(if ${DISTRO},-${DISTRO},) \
+		darakeon/${MACHINE}$(if ${DISTRO},:${DISTRO},)
 	@if [ "${DISTRO}" = "alpine" ]; then \
-		docker tag darakeon/${MACHINE}$(if ${DISTRO},:${DISTRO},) darakeon/${MACHINE}; \
+		docker tag darakeon-${MACHINE}$(if ${DISTRO},-${DISTRO},) darakeon/${MACHINE}; \
 	fi
 	@if [ "${TAG}" != "" ]; then \
-		docker tag darakeon/${MACHINE} darakeon/${MACHINE}:${TAG}; \
+		docker tag darakeon-${MACHINE}$(if ${DISTRO},-${DISTRO},) darakeon/${MACHINE}:${TAG}; \
 	fi
 	@echo "${MACHINE}$(if ${DISTRO}, ${DISTRO},) built!"
 

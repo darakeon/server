@@ -1,12 +1,15 @@
 FROM darakeon/ubuntu
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
+ARG NETCORE="9"
+ENV NETCORE=$NETCORE
+
 RUN apt-get install -y \
         libc6 libgcc1 libgcc-s1 libgssapi-krb5-2 libicu74 \
         liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g \
     && curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh \
     && chmod +x ./dotnet-install.sh \
-    && ./dotnet-install.sh --channel 9.0 --install-dir /usr/lib/dotnet \
+    && ./dotnet-install.sh --channel ${NETCORE}.0 --install-dir /usr/lib/dotnet \
     && rm ./dotnet-install.sh \
     && clean_os
 
