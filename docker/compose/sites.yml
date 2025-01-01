@@ -53,11 +53,11 @@ services:
     #  timeout: 60s
     #  retries: 2
 
-  dfm-sql-runner:
-    image: darakeon/sql-runner
-    container_name: sql-runner
+  dfm-dfm-migrator:
+    image: darakeon/dfm-migrator
+    container_name: dfm-migrator
     env_file:
-      - /var/cfg/sql-runner/.env
+      - /var/cfg/dfm-migrator/.env
     deploy:
       resources:
           limits:

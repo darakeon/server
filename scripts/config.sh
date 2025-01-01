@@ -20,8 +20,8 @@ if [ ! -e prod.env ]; then echo $PWD/prod.env > prod.env && nano prod.env; fi
 if [ ! -e prod.py ]; then echo $PWD/prod.py > prod.py && nano prod.py; fi
 cd ..
 
-if [ ! -e sql-runner ]; then mkdir sql-runner; fi
-cd sql-runner
+if [ ! -e dfm-migrator ]; then mkdir dfm-migrator; fi
+cd dfm-migrator
 if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
 
