@@ -1,6 +1,9 @@
 FROM darakeon/alpine
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
+ARG NETCORE="8"
+ENV NETCORE=$NETCORE
+
 RUN apk add bash icu-libs krb5-libs libgcc libintl libstdc++ zlib \
     && curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh \
     && chmod +x ./dotnet-install.sh \
