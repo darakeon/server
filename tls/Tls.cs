@@ -71,7 +71,7 @@ namespace TLS
 
 			var started = process.Start();
 
-			Console.WriteLine(await File.ReadAllTextAsync("/etc/nginx/conf.d/default.conf"));
+			await logConfigs();
 
 			if (!started)
 			{
@@ -79,12 +79,12 @@ namespace TLS
 				return false;
 			}
 
-			Console.WriteLine(await File.ReadAllTextAsync("/etc/nginx/conf.d/default.conf"));
+			await logConfigs();
 
 			await process.WaitForExitAsync();
 			var isOk = process.ExitCode == 0;
 
-			Console.WriteLine(await File.ReadAllTextAsync("/etc/nginx/conf.d/default.conf"));
+			await logConfigs();
 
 			var result = isOk
 				? process.StandardOutput
@@ -96,6 +96,17 @@ namespace TLS
 				await recordIssued(true);
 
 			return isOk;
+		}
+
+		private static async Task logConfigs()
+		{
+			var configs =
+				Directory.GetFiles("/etc/nginx/conf.d", "*.conf");
+
+			foreach (var config in configs)
+			{
+				Console.WriteLine(await File.ReadAllTextAsync(config));
+			}
 		}
 
 		private async Task<Boolean?> testIssued()
