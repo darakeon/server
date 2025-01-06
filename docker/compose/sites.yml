@@ -53,7 +53,7 @@ services:
     #  timeout: 60s
     #  retries: 2
 
-  dfm-dfm-migrator:
+  dfm-migrator:
     image: darakeon/dfm-migrator
     container_name: dfm-migrator
     env_file:
