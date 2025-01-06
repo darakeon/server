@@ -71,7 +71,7 @@ namespace TLS
 
 			var started = process.Start();
 
-			await logConfigs();
+			//await logConfigs();
 
 			if (!started)
 			{
@@ -79,12 +79,12 @@ namespace TLS
 				return false;
 			}
 
-			await logConfigs();
+			//await logConfigs();
 
 			await process.WaitForExitAsync();
 			var isOk = process.ExitCode == 0;
 
-			await logConfigs();
+			//await logConfigs();
 
 			var result = isOk
 				? process.StandardOutput
