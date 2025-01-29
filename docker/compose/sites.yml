@@ -27,12 +27,14 @@ services:
           limits:
             cpus: 0.4
             memory: 200M
-    #restart: on-failure:3
-    #healthcheck:
-    #  test: ["CMD", "curl", "-k", "https://localhost:2011/contract"]
-    #  start_period: 60s
-    #  timeout: 60s
-    #  retries: 2
+    restart: on-failure:3
+    healthcheck:
+      test: ["CMD", "curl", "-k", "-f", "https://localhost:2011/contract"]
+      interval: 5m
+      timeout: 60s
+      retries: 3
+      start_period: 60s
+      start_interval: 60s
 
   dfm-api:
     image: darakeon/dfm-api
@@ -46,12 +48,14 @@ services:
           limits:
             cpus: 0.2
             memory: 150M
-    #restart: on-failure:3
-    #healthcheck:
-    #  test: ["CMD", "curl", "-k", "https://localhost:2023"]
-    #  start_period: 60s
-    #  timeout: 60s
-    #  retries: 2
+    restart: on-failure:3
+    healthcheck:
+      test: ["CMD", "curl", "-k", "-f", "https://localhost:2023"]
+      interval: 5m
+      timeout: 60s
+      retries: 3
+      start_period: 60s
+      start_interval: 60s
 
   dfm-migrator:
     image: darakeon/dfm-migrator
@@ -79,12 +83,14 @@ services:
           limits:
             cpus: 0.2
             memory: 200M
-    #restart: on-failure:3
-    #healthcheck:
-    #  test: ["CMD", "curl", "http://localhost:8627"]
-    #  start_period: 60s
-    #  timeout: 60s
-    #  retries: 2
+    restart: on-failure:3
+    healthcheck:
+      test: ["CMD", "curl", "-k", "-f", "http://localhost:8627"]
+      interval: 5m
+      timeout: 60s
+      retries: 3
+      start_period: 60s
+      start_interval: 60s
 
   #curriculum:
   #  image: darakeon/curriculum
