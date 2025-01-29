@@ -5,11 +5,17 @@ set -e
 
 cd ~/server
 
-git stash
+export DIFF=$(git diff)
+
+if [ "$DIFF" != "" ]; then
+    git stash
+fi
 
 git pull
 
-git stash pop
+if [ "$DIFF" != "" ]; then
+    git stash pop
+fi
 
 cd scripts
 
