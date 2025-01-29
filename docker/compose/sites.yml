@@ -83,14 +83,14 @@ services:
           limits:
             cpus: 0.2
             memory: 200M
-    restart: on-failure:3
-    healthcheck:
-      test: ["CMD", "curl", "-k", "-f", "http://localhost:8627"]
-      interval: 5m
-      timeout: 60s
-      retries: 3
-      start_period: 60s
-      start_interval: 60s
+    #restart: on-failure:3
+    #healthcheck:
+    #  test: ["CMD", "curl", "-k", "-f", "http://localhost:8627"]
+    #  interval: 5m
+    #  timeout: 60s
+    #  retries: 3
+    #  start_period: 60s
+    #  start_interval: 60s
 
   #curriculum:
   #  image: darakeon/curriculum
