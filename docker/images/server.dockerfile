@@ -1,4 +1,4 @@
-FROM darakeon/netcore as builder
+FROM darakeon/netcore AS builder
 LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN maintain
