@@ -59,7 +59,10 @@ async function buildSecurityGroup(permissions, ports, ip) {
 	for (let p = 0; p < permissions.length; p++) {
 		const permission = permissions[p]
 		const port = permission.FromPort
-		const currentIp = permission.IpRanges[0].CidrIp
+
+		const currentIp = permission.IpRanges.length
+			? permission.IpRanges[0].CidrIp
+			: null
 
 		const portIndex = ports.indexOf(port)
 		const isSecret = portIndex >= 0 && currentIp.endsWith('/32')
