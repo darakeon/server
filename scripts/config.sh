@@ -9,8 +9,9 @@ if [ ! -e dfm ]; then mkdir dfm; fi
 cd dfm
 if [ ! -e db.amazon.json ]; then echo $PWD/db.amazon.json > db.amazon.json && nano db.amazon.json; fi
 if [ ! -e smtp.amazon.json ]; then echo $PWD/smtp.amazon.json > smtp.amazon.json && nano smtp.amazon.json; fi
-if [ ! -e s3.amazon.json ]; then echo $PWD/s3.amazon.json > s3.amazon.json && nano s3.amazon.json; fi
-if [ ! -e sqs.amazon.json ]; then echo $PWD/sqs.amazon.json > sqs.amazon.json && nano sqs.amazon.json; fi
+if [ ! -e log.amazon.json ]; then echo $PWD/log.amazon.json > log.amazon.json && nano log.amazon.json; fi
+if [ ! -e storage.amazon.json ]; then echo $PWD/storage.amazon.json > storage.amazon.json && nano storage.amazon.json; fi
+if [ ! -e queue.amazon.json ]; then echo $PWD/queue.amazon.json > queue.amazon.json && nano queue.amazon.json; fi
 if [ ! -e login.amazon.json ]; then echo $PWD/login.amazon.json > login.amazon.json && nano login.amazon.json; fi
 cd ..
 
