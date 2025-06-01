@@ -25,4 +25,5 @@ RUN echo "printf '\e[38;5;51m'" >> ~/.bashrc
 RUN echo "talisman --version" >> ~/.bashrc
 RUN echo "printf '\e[38;5;253m'" >> ~/.bashrc
 
+SHELL ["/bin/bash", "-c"]
 CMD bash

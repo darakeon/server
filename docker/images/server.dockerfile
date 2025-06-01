@@ -34,4 +34,5 @@ EXPOSE 443
 
 WORKDIR /var/www
 
+SHELL ["/bin/bash", "-c"]
 CMD ./nginx_and_tls
