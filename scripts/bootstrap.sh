@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+apt-get install -y software-properties-common \
+    && add-apt-repository ppa:git-core/ppa -y
+
 cd ~
 git clone https://github.com/darakeon/server.git
 
