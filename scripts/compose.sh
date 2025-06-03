@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 PROJ=$1
 
