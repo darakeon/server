@@ -14,9 +14,10 @@ RUN maintain
 
 RUN apt-get install -y \
         curl nano zip unzip git build-essential \
-    && clean_os
-
-RUN add-apt-repository ppa:git-core/ppa
+        && clean_os
+        
+RUN apt-get install -y software-properties-common \
+    && add-apt-repository ppa:git-core/ppa -y
 
 RUN echo 'export PS1="\n\n[\[\e[01;30m\]\A\[\e[00m\]] \[\e[01;31m\]\u\[\e[00m\]@\[\e[01;35m\]\W\[\e[00m\]$ "' >> ~/.bashrc
 
