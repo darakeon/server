@@ -30,4 +30,21 @@ cd tls
 if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
 cd ..
 
+if [ ! -e cloud-watch ]; then mkdir cloud-watch; fi
+cd cloud-watch
+if [ ! -e .env ]; then echo $PWD/.env > .env && nano .env; fi
+cd ..
+
 chmod 777 /var/log
+
+sudo mkdir -p /root/.aws
+set -a
+source /var/cfg/cloud-watch/.env
+set +a
+
+echo "[default]" > credentials
+echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> credentials
+echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> credentials
+echo "region = $LOGS_REGION" >> credentials
+
+sudo mv credentials /root/.aws/credentials
