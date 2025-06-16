@@ -118,6 +118,12 @@ services:
       - /var/data/midna/static:/var/midna/static/outside
     env_file:
       - /var/cfg/tls/.env
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ${LOGS_REGION}
+        awslogs-group: ${LOGS_GROUP}
+        awslogs-stream: ${LOGS_STREAM_NGINX}
     deploy:
       resources:
           limits:

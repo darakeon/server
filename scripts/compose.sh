@@ -5,6 +5,10 @@ PROJ=$1
 
 ./print-date.sh start compose $PROJ
 
+set -a
+source /var/cfg/cloud-watch/.env
+set +a
+
 docker compose -p $PROJ -f ../docker/compose/$PROJ.yml pull --ignore-pull-failures
 docker compose -p $PROJ -f ../docker/compose/$PROJ.yml up -d --remove-orphans
 
