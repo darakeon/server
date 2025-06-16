@@ -18,7 +18,6 @@ cd ..
 if [ ! -e midna ]; then mkdir midna; fi
 cd midna
 if [ ! -e prod.env ]; then echo $PWD/prod.env > prod.env && nano prod.env; fi
-if [ ! -e prod.py ]; then echo $PWD/prod.py > prod.py && nano prod.py; fi
 cd ..
 
 if [ ! -e dfm-migrator ]; then mkdir dfm-migrator; fi
