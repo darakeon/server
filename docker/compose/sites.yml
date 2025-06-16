@@ -72,8 +72,7 @@ services:
     image: darakeon/dfm-midna
     container_name: midna
     volumes:
-      - /var/cfg/midna:/var/midna/config
-      - /var/data/midna/log:/var/log/gunicorn # access.log + error.log
+      - /var/cfg/midna/prod.env:/var/midna/config/prod.env
       - /var/data/midna/run:/var/run/gunicorn # prod.pid
       - /var/data/midna/static:/var/midna/static/outside
     env_file:
