@@ -30,9 +30,9 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "-k", "-f", "https://localhost:2011/contract"]
-      interval: 5m
-      timeout: 60s
-      retries: 3
+      interval: 15m
+      timeout: 30s
+      retries: 1
       start_period: 60s
       start_interval: 60s
 
@@ -51,9 +51,9 @@ services:
     restart: on-failure:3
     healthcheck:
       test: ["CMD", "curl", "-k", "-f", "https://localhost:2023"]
-      interval: 5m
-      timeout: 60s
-      retries: 3
+      interval: 15m
+      timeout: 30s
+      retries: 1
       start_period: 60s
       start_interval: 60s
 
