@@ -26,7 +26,11 @@ status:
 	@echo ""
 	@echo "DSK $$(make disk_percent && echo ' / ' && make disk_total)" | tr -d '\n'
 	@echo ""
+	@echo "DOCKER:"
 	@docker stats --no-stream
+	@echo ""
+	@echo "KERNELS:"
+	@make linux_old_kernels
 
 memory_percent:
 	@free -t | awk 'NR == 4 {print $$3/$$2*100 "%"}'
@@ -49,3 +53,9 @@ disk_total:
 restart_docker:
 	@sudo systemctl restart docker
 	@sudo systemctl restart containerd
+
+linux_old_kernels:
+	@dpkg --get-selections | grep linux-imag
+	@echo "---"
+	@echo "To remove old kernels, run: "
+	@echo "sudo apt-get remove --purge <image name>"
