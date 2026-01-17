@@ -56,6 +56,22 @@ jobs:
           path: docker
           command: make netcore_server_push
       - run:
+          name: Build and Push Netcore Alpine 9
+          path: docker
+          command: NETCORE=9 make netcore_alpine_push
+      - run:
+          name: Build and Push Netcore Ubuntu 9
+          path: docker
+          command: NETCORE=9 make netcore_ubuntu_push
+      - run:
+          name: Build and Push Netcore Libman Alpine 9
+          path: docker
+          command: NETCORE=9 make netcore_libman_alpine_push
+      - run:
+          name: Build and Push Netcore Libman Ubuntu 9
+          path: docker
+          command: NETCORE=9 make netcore_libman_ubuntu_push
+      - run:
           name: Build and Push Server
           path: docker
           command: make server_push
