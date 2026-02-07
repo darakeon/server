@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+apt-get update
+apt-get upgrade
+
 apt-get install -y software-properties-common \
     && add-apt-repository ppa:git-core/ppa -y
 
