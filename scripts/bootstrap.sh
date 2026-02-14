@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-apt-get update
-apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade -y
 
-apt-get install -y software-properties-common \
-    && add-apt-repository ppa:git-core/ppa -y
+sudo apt-get install -y software-properties-common \
+    && sudo add-apt-repository ppa:git-core/ppa -y
 
 cd ~
 git clone https://github.com/darakeon/server.git
