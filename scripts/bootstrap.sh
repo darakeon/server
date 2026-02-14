@@ -10,7 +10,6 @@ sudo apt-get install -y software-properties-common \
 cd ~
 git clone https://github.com/darakeon/server.git
 
-mkdir -p ~/server/scripts
 cd ~/server/scripts
 ./docker.sh
 ./aws.sh
