@@ -11,7 +11,7 @@ sysctl -p
 apt update
 apt install -y iptables-persistent
 
-iptables -t nat -A POSTROUTING -o eth0 -s 172.31.0.0/16 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens5 -s 172.31.0.0/16 -j MASQUERADE
 
 # export DEBIAN_FRONTEND=noninteractive
 # INTERFACE=$(ip route get 8.8.8.8 | awk '{for(i=1;i<=NF;i++) if ($i=="dev") print $(i+1)}')
