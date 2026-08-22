@@ -10,6 +10,7 @@ sysctl -p
 
 apt update
 apt install -y iptables-persistent
+apt install -y netcat
 
 iptables -t nat -A POSTROUTING -o ens5 -s 172.31.0.0/16 -j MASQUERADE
 iptables -I FORWARD -s 172.31.0.0/16 -j ACCEPT
