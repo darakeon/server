@@ -3,7 +3,7 @@ LABEL maintainer="Dara Keon <laboon@darakeon.com>"
 
 RUN maintain
 
-RUN apk add github-cli
+RUN apk add github-cli openssh
 
 #(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 #&& sudo mkdir -p -m 755 /etc/apt/keyrings \
